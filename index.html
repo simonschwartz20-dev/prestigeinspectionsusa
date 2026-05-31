@@ -1,285 +1,1458 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Inspections USA</title>
-  <meta name="description" content="Prestige Inspections USA - Licensed & Certified Home Inspector" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg-dark:#2f4247;    /* dark teal/charcoal from screenshots */
-      --muted:#aeb6b9;
-      --gold1:#ffcb4b;
-      --gold2:#f1a800;
-      --white:#ffffff;
-      --maxw:1100px;
-      --radius:12px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      color:var(--bg-dark);
-      background:#fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:20px;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* HERO (dark) */
-    .hero{
-      background:var(--bg-dark);
-      color:var(--white);
-      text-align:center;
-      padding:48px 18px;
-      position:relative;
-    }
-    .hero .toprow{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:var(--maxw);margin:0 auto;padding:0 18px}
-    .brand-left, .brand-right{color:var(--white);font-size:14px}
-    .brand-left ul{list-style:none;padding:0;margin:0;text-align:left}
-    .brand-left li{margin:6px 0;font-weight:600}
-    .brand-right{font-size:13px;text-align:right}
-    .logo-circle{width:96px;height:96px;border-radius:50%;background:#fff;padding:8px;display:inline-block;box-shadow:0 10px 20px rgba(0,0,0,0.18)}
-    .logo-circle img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-    .title{
-      margin-top:22px;
-      font-family:'Playfair Display',serif;
-      font-size:44px;
-      letter-spacing:2px;
-      font-weight:700;
-    }
-    .subtitle{color:var(--muted);font-weight:600;margin-top:6px}
-    .cta{
-      display:inline-block;
-      margin:22px auto 10px;
-      background:linear-gradient(180deg,var(--gold1),var(--gold2));
-      color:#111;
-      padding:12px 28px;
-      border-radius:30px;
-      font-weight:800;
-      text-decoration:none;
-      box-shadow: 0 8px 20px rgba(241,168,0,0.25);
-      transition:transform .12s ease;
-    }
-    .cta:active{transform:translateY(2px)}
-    .quote{margin-top:18px;color:var(--white);opacity:0.95}
-
-    /* testimonial dots */
-    .dots{display:flex;gap:9px;justify-content:center;margin-top:24px}
-    .dots .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.4)}
-    .dots .dot.active{background:var(--white)}
-
-    /* section separator */
-    .section-light{
-      background:#f7f7f7;
-      padding:40px 18px;
-      text-align:center;
-    }
-    .section-light h2{font-size:32px;margin:0 0 10px;font-weight:800}
-    .section-light .lead{font-size:18px;color:#4a4a4a;font-weight:600;margin-top:10px}
-
-    /* magnifying header row */
-    .magnify-row{padding:28px 18px;text-align:center}
-    .magnify-row h3{font-size:28px;font-weight:800;letter-spacing:1px;color:var(--bg-dark)}
-    .magnify-row p{max-width:880px;margin:12px auto;color:#4a4a4a;font-weight:600}
-
-    /* certified block (dark background similar to screenshot) */
-    .cert-block{
-      background:#36494d;color:var(--white);padding:34px 18px;text-align:center;
-    }
-    .cert-block .bigquote{font-weight:700;font-size:18px;max-width:900px;margin:0 auto 18px;color:#fff}
-    .cert-block .para{color:#dbe4e5;max-width:900px;margin:10px auto 22px;line-height:1.6;font-size:15px}
-
-    /* logos row and "back to top" */
-    .logos-row{display:flex;gap:24px;align-items:center;justify-content:center;margin-top:22px}
-    .logos-row img{height:64px;object-fit:contain;border-radius:50%;background:#fff;padding:6px}
-    .backtotop{
-      display:inline-flex;flex-direction:column;align-items:center;margin-top:14px;color:#fff;text-decoration:none;font-weight:800;
-    }
-    .backtotop .upcircle{
-      width:54px;height:54px;border-radius:50%;background:#fff;color:var(--bg-dark);display:flex;align-items:center;justify-content:center;margin-bottom:8px;box-shadow:0 8px 20px rgba(0,0,0,0.18)
+    :root {
+      --blue: #0F2744;
+      --gold: #C8A96B;
+      --white: #ffffff;
+      --text: #1F2937;
+      --light-gray: #F3F4F6;
+      --mid-gray: #6B7280;
     }
 
-    /* gallery */
-    .gallery-wrap{background:var(--bg-dark);padding:24px 18px}
-    .gallery{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gallery img{width:100%;display:block;height:110px;object-fit:cover;border-radius:4px;box-shadow:0 8px 16px rgba(0,0,0,0.22)}
-    @media (max-width:900px){
-      .gallery{grid-template-columns:repeat(2,1fr)}
-      .title{font-size:36px}
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
     }
 
-    /* contact area */
-    .contact-section{padding:36px 18px;display:flex;gap:24px;max-width:var(--maxw);margin:0 auto;align-items:center;flex-wrap:wrap}
-    .contact-left{flex:1 1 340px}
-    .contact-right{flex:1 1 360px;text-align:center}
-    .contact-list{list-style:none;padding:0;margin:0 0 20px 0}
-    .contact-list li{display:flex;gap:12px;align-items:center;margin:14px 0;font-weight:700;color:var(--bg-dark)}
-    .icon{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#0b1011;color:#fff;font-weight:800}
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
 
-    .contact-button{
-      display:inline-block;
-      padding:14px 28px;border-radius:28px;text-decoration:none;font-weight:800;
-      background:linear-gradient(90deg,#ffd36b,#ff8f26);
-      box-shadow:0 14px 30px rgba(255,143,38,0.18);
-      color:#111;
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--blue);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 0;
     }
-    .license{font-style:italic;margin-top:14px;color:#444;font-weight:700}
-    .reachout{font-size:32px;font-weight:800;letter-spacing:1px;color:var(--bg-dark)}
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .top-bar a { color: var(--white); }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar-center { text-align: center; flex: 1; }
+    .top-bar-right { display: flex; gap: 16px; align-items: center; }
 
-    /* footer */
-    footer{background:#111;padding:22px 18px;color:#bfc6c8;text-align:center;font-size:13px}
-    footer .addr{color:#9aa0a2;font-weight:700}
+    /* ─── MAIN HEADER ─── */
+    .main-header {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .main-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .logo-icon-footer {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .logo-text { line-height: 1.2; }
+    .logo-text strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
 
-    /* small helpers */
-    .center{text-align:center}
-    .muted{color:var(--muted)}
-    a.no-underline{text-decoration:none;color:inherit}
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--blue); }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+    .btn-primary:hover { background: #1a3a5e; border-color: #1a3a5e; }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-outline:hover { background: var(--white); color: var(--blue); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover { background: #b8944f; border-color: #b8944f; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid #e5e7eb;
+      padding: 16px 24px 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-menu a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .mobile-menu .btn { margin-top: 8px; text-align: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ─── PAGE SECTIONS (SPA routing) ─── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1e36 0%, #1a3a5e 40%, #2d5a8a 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 800px 600px at 70% 50%, rgba(200,169,107,0.08) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230F2744' stop-opacity='0.9'/%3E%3Cstop offset='1' stop-color='%230F2744' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+      z-index: 0;
+    }
+    /* House silhouette SVG background */
+    .hero-house {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,169,107,0.15);
+      border: 1px solid rgba(200,169,107,0.4);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero-badge::before { content: '★'; }
+    .hero h1 {
+      font-size: 56px;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 22px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat { color: var(--white); }
+    .hero-stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      color: var(--gold);
+    }
+    .hero-stat span { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      background: var(--gold);
+      padding: 18px 0;
+    }
+    .trust-strip .container {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .trust-item::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--light-gray); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: 38px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-header p {
+      font-size: 17px;
+      color: var(--mid-gray);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── SERVICES CARDS ─── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+    .card-img {
+      height: 220px;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(15,39,68,0.6) 100%);
+    }
+    .card-img-emoji { position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .card-body h3 {
+      font-size: 20px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .card-body p { font-size: 15px; color: var(--mid-gray); line-height: 1.7; flex: 1; }
+    .card-note {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .card-body .btn { margin-top: 8px; padding: 10px 20px; font-size: 13px; }
+
+    /* Service card backgrounds */
+    .card-bg-1 { background: linear-gradient(135deg, #0F2744 0%, #1a3a5e 100%); }
+    .card-bg-2 { background: linear-gradient(135deg, #1a3a5e 0%, #2d5a8a 100%); }
+    .card-bg-3 { background: linear-gradient(135deg, #0F2744 0%, #1e3d6b 100%); }
+
+    /* Radon diagram */
+    .radon-diagram {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    /* ─── WHY CHOOSE US GRID ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .why-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--gold);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .why-box:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .why-box h4 {
+      font-size: 15px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .why-box p { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+
+    /* ─── CONTACT SECTION ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-size: 36px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .contact-info p { font-size: 16px; color: var(--mid-gray); line-height: 1.8; margin-bottom: 12px; }
+    .contact-info .note {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      color: var(--white);
+    }
+    .contact-item-text strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: var(--mid-gray);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .contact-item-text a, .contact-item-text span {
+      font-size: 15px;
+      color: var(--blue);
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .contact-item-text a:hover { color: var(--gold); }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .contact-form h3 {
+      font-size: 22px;
+      color: var(--blue);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form .btn { width: 100%; justify-content: center; padding: 14px; font-size: 15px; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      color: #059669;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--blue);
+      color: var(--white);
+      padding: 60px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-col p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ─── SERVICES PAGE ─── */
+    .page-hero {
+      background: linear-gradient(135deg, #0F2744 0%, #1a3a5e 100%);
+      color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .page-hero .badge {
+      display: inline-block;
+      background: rgba(200,169,107,0.2);
+      border: 1px solid rgba(200,169,107,0.4);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .page-hero h1 { font-size: 46px; font-weight: 700; margin-bottom: 16px; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    .service-section {
+      padding: 72px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .service-section:last-child { border-bottom: none; }
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .service-layout.reverse { direction: rtl; }
+    .service-layout.reverse > * { direction: ltr; }
+    .service-visual {
+      background: linear-gradient(135deg, #0F2744 0%, #1a3a5e 100%);
+      border-radius: 16px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(200,169,107,0.15) 0%, transparent 60%);
+    }
+    .service-visual span { position: relative; z-index: 1; }
+    .service-tag {
+      display: inline-block;
+      background: rgba(200,169,107,0.1);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .service-content h2 {
+      font-size: 32px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .service-content p {
+      font-size: 15px;
+      color: var(--mid-gray);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .service-list {
+      list-style: none;
+      margin: 16px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .service-list li::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      background: var(--gold);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .service-warning {
+      background: #FEF3C7;
+      border-left: 4px solid #F59E0B;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: #92400E;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    /* ─── ABOUT PAGE ─── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 80px 0;
+    }
+    .about-photo {
+      background: linear-gradient(135deg, #0F2744 0%, #2d5a8a 100%);
+      border-radius: 20px;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(transparent, rgba(15,39,68,0.6));
+    }
+    .about-content { padding-top: 8px; }
+    .about-content .badge {
+      display: inline-block;
+      background: rgba(200,169,107,0.1);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .about-content h1 {
+      font-size: 38px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .about-content p {
+      font-size: 15px;
+      color: var(--mid-gray);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .license-box {
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 32px;
+    }
+    .license-box h4 {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .license-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .license-item:last-child { border-bottom: none; }
+    .license-item::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    /* About value props */
+    .about-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 0 80px;
+    }
+    .about-value {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--light-gray);
+      border-radius: 14px;
+    }
+    .about-value .icon { font-size: 36px; margin-bottom: 12px; }
+    .about-value h4 {
+      font-size: 15px;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .about-value p { font-size: 13px; color: var(--mid-gray); line-height: 1.6; }
+
+    /* ─── UTILITY CLASSES (replacing inline styles) ─── */
+    .btn-mt { margin-top: 20px; }
+    .radon-svg { position: relative; z-index: 1; }
+    .cta-strip { padding: 32px 0; }
+    .cta-container { flex-direction: column; gap: 16px; text-align: center; }
+    .cta-text { color: white; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; }
+    .btn-cta { background: white; color: var(--blue); border-color: white; align-self: center; }
+    .about-photo-icon { position: relative; z-index: 1; font-size: 90px; }
+
+    .footer-address { margin-top: 8px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .service-layout, .service-layout.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-values { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 700px) {
+      .top-bar .container { flex-direction: column; gap: 6px; text-align: center; }
+      .top-bar-right { justify-content: center; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: 34px; }
+      .hero-sub { font-size: 17px; }
+      .hero .container { align-items: center; text-align: center; }
+      .hero-badge { align-self: center; }
+      .hero-btns { justify-content: center; flex-direction: column; gap: 12px; }
+      .hero-btns .btn { width: 100%; text-align: center; }
+      .hero-stats { flex-direction: column; gap: 16px; align-items: center; }
+      .trust-strip .container { flex-direction: column; gap: 14px; text-align: center; }
+      .trust-item { justify-content: center; }
+      .section-header h2 { font-size: 28px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 30px; }
+      .about-content h1 { font-size: 28px; }
+      .service-visual { height: 220px; font-size: 56px; }
+      .about-photo { height: 260px; font-size: 72px; }
+      .contact-form { padding: 24px 20px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="toprow">
-      <div class="brand-left">
-        <ul>
-          <li style="font-weight:800">• Licensed</li>
-          <li style="font-weight:800">• Insured</li>
-          <li style="font-weight:800">• Certified</li>
-        </ul>
+  <!-- ── TOP BAR ── -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <a href="tel:9292103781">📞 (929) 210-3781</a>
       </div>
-
-      <div style="text-align:center">
-        <div class="logo-circle" aria-hidden="true">
-          <!-- Replace src with your logo file -->
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAABX5wYwAAAA... (replace with your logo or path)" alt="Prestige logo" id="logoPlaceholder" />
-        </div>
+      <div class="top-bar-center">
+        Serving the Tri-State Area, Orange &amp; Sullivan Counties
       </div>
-
-      <div class="brand-right">
-        <div style="font-weight:700">Serving NYC, Long Island, Orange &<br> Sullivan Counties</div>
+      <div class="top-bar-right">
+        <a href="https://wa.link/5H3MG7" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a href="mailto:Shimon@prestigeinspectionsusa.com">✉ Email</a>
       </div>
     </div>
+  </div>
 
-    <div class="title">PRESTIGE INSPECTIONS</div>
-    <div class="subtitle">Your Trusted New York Home Inspector</div>
+  <!-- ── MAIN HEADER ── -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo-area">
+        <img class="logo-icon" src="image.png" alt="Prestige Inspections USA" />
+      </div>
 
-    <a class="cta" href="tel:+19292103781" title="Call Now">(929) 210-3781 — CALL US NOW</a>
+      <nav>
+        <a href="#" class="active" onclick="showPage('home');return false;">Home</a>
+        <a href="#" onclick="showPage('services');return false;">Services</a>
+        <a href="#" onclick="showPage('about');return false;">About Us</a>
+        <a href="#" class="btn btn-primary" onclick="scrollToContact();return false;">Schedule Inspection</a>
+      </nav>
 
-    <div class="quote">"PROFESSIONAL, RELIABLE, AND THOROUGH - EVERY TIME"</div>
-
-    <div class="dots" aria-hidden="true">
-      <div class="dot active"></div>
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#" onclick="showPage('home');closeMenu();return false;">Home</a>
+      <a href="#" onclick="showPage('services');closeMenu();return false;">Services</a>
+      <a href="#" onclick="showPage('about');closeMenu();return false;">About Us</a>
+      <a href="#" class="btn btn-primary" onclick="scrollToContact();closeMenu();return false;">Schedule Inspection</a>
     </div>
   </header>
 
-  <!-- Magnify Section -->
-  <section class="section-light magnify-row">
-    <h2>YOUR HOME UNDER OUR <span style="font-size:30px">🔍</span></h2>
-    <p class="lead">"Expert home inspections for all property types, including Condos, Townhouses, Single-family homes, and Multifamily dwellings"</p>
-  </section>
+  <!-- ════════════════════════════════════ HOME PAGE ════════════════════════════════════ -->
+  <div id="page-home" class="page active">
 
-  <!-- Certified / About block -->
-  <section class="cert-block">
-    <div class="bigquote">"Certified Home Inspector, ICA School educated, dedicated to providing thorough and trustworthy Inspections."</div>
+    <!-- HERO -->
+    <section class="hero">
+      <svg class="hero-house" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="400,40 720,200 720,480 80,480 80,200" fill="white"/>
+        <rect x="150" y="280" width="120" height="200" fill="#0F2744"/>
+        <rect x="320" y="280" width="160" height="200" fill="#0F2744"/>
+        <rect x="530" y="280" width="120" height="200" fill="#0F2744"/>
+        <rect x="160" y="295" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="220" y="295" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="160" y="355" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="220" y="355" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="380" y="330" width="40" height="150" fill="white" opacity="0.6"/>
+        <rect x="540" y="295" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="600" y="295" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="540" y="355" width="45" height="45" fill="white" opacity="0.5"/>
+        <rect x="600" y="355" width="45" height="45" fill="white" opacity="0.5"/>
+        <polygon points="400,40 720,200 80,200" fill="#C8A96B" opacity="0.3"/>
+      </svg>
 
-    <div class="para">
-      As a licensed and certified home inspector in New York, I provide thorough and reliable home inspection services to clients. With a keen eye for detail and a commitment to excellence, I'm dedicated to helping homeowners, buyers, and sellers make informed decisions about their properties.<br><br>
-      Whether you're purchasing a new home, selling your current one, or simply looking to maintain your property's value, I'm here to provide expert guidance and support. My inspections cover all major systems and components, ensuring you have a comprehensive understanding of your home's condition.<br><br>
-      With my expertise and state-of-the-art equipment, you can trust that your home inspection will be conducted with precision and professionalism. I'm ready to serve clients across New York, providing peace of mind and valuable insights that will benefit you for years to come.<br><strong>Reach out to us today! We're eager to assist you.</strong>
+      <div class="container">
+        <div class="hero-badge">Licensed &amp; Certified New York Inspector</div>
+        <h1>Your Trusted <span>New York</span><br>Home Inspector</h1>
+        <p class="hero-sub">Professional, Reliable, and Thorough — Every Time</p>
+        <p class="hero-desc">
+          Licensed &amp; Certified Home Inspections, Sewer Scope Inspections, and Radon Testing throughout New York and the Tri-State Area.
+        </p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary" onclick="scrollToContact();return false;">Schedule Inspection</a>
+          <a href="tel:9292103781" class="btn btn-outline">Call Now</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>24hr</strong><span>Report Turnaround</span></div>
+          <div class="hero-stat"><strong>100%</strong><span>Licensed &amp; Certified</span></div>
+          <div class="hero-stat"><strong>3</strong><span>Core Services</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-item">Licensed NY Home Inspector</div>
+        <div class="trust-item">ICA Certified Home Inspector</div>
+        <div class="trust-item">24-Hour Report Turnaround</div>
+      </div>
     </div>
 
-    <div class="logos-row">
-      <!-- Replace these src links with your real logo files -->
-      <img src="https://via.placeholder.com/120x120.png?text=Prestige" alt="Prestige logo" />
-      <a class="backtotop no-underline" href="#top" title="Back to top">
-        <div class="upcircle">▲</div>
-        <div style="color:#fff;font-weight:700">BACK TO TOP</div>
-      </a>
-      <img src="https://via.placeholder.com/120x80.png?text=ICA" style="width:120px;height:64px;object-fit:contain;border-radius:6px;padding:6px;background:#fff" alt="ICA logo" />
+    <!-- SERVICES PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What We Offer</span>
+          <h2>Our Inspection Services</h2>
+          <p>Comprehensive inspection services designed to protect your investment and provide peace of mind.</p>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- Card 1: Home Inspections -->
+          <div class="card">
+            <div class="card-img card-bg-1">
+              <div class="card-img-overlay"></div>
+              <span class="card-img-emoji">🏠</span>
+            </div>
+            <div class="card-body">
+              <h3>Home Inspections</h3>
+              <p>Comprehensive evaluations of major home systems and components to help buyers and homeowners make informed decisions.</p>
+              <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Sewer Scope -->
+          <div class="card">
+            <div class="card-img card-bg-2">
+              <div class="card-img-overlay"></div>
+              <span class="card-img-emoji">🔍</span>
+            </div>
+            <div class="card-body">
+              <h3>Sewer Scope Inspections</h3>
+              <p>Camera inspections of the main sewer line to identify hidden underground issues before they become costly repairs.</p>
+              <p class="card-note">⚠ Sewer repairs can exceed $10,000.</p>
+              <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Radon -->
+          <div class="card">
+            <div class="card-img card-bg-3">
+              <div class="card-img-overlay"></div>
+              <svg class="card-img-emoji" viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg" aria-label="Radon testing diagram">
+                <!-- soil layers -->
+                <rect x="0" y="110" width="180" height="50" fill="#5D4037" opacity="0.7" rx="2"/>
+                <rect x="0" y="100" width="180" height="14" fill="#795548" opacity="0.5"/>
+                <!-- house cross section -->
+                <rect x="20" y="40" width="140" height="70" fill="none" stroke="white" stroke-width="2" opacity="0.6" rx="3"/>
+                <!-- roof -->
+                <polyline points="10,42 90,10 170,42" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+                <!-- foundation crack -->
+                <path d="M80,110 L90,90 L100,110" fill="none" stroke="#C8A96B" stroke-width="2"/>
+                <!-- radon arrows -->
+                <line x1="50" y1="130" x2="50" y2="95" stroke="#C8A96B" stroke-width="1.5" opacity="0.8"/>
+                <polygon points="50,92 46,100 54,100" fill="#C8A96B" opacity="0.8"/>
+                <line x1="90" y1="120" x2="90" y2="85" stroke="#C8A96B" stroke-width="1.5" opacity="0.8"/>
+                <polygon points="90,82 86,90 94,90" fill="#C8A96B"/>
+                <line x1="130" y1="130" x2="130" y2="95" stroke="#C8A96B" stroke-width="1.5" opacity="0.8"/>
+                <polygon points="130,92 126,100 134,100" fill="#C8A96B" opacity="0.8"/>
+                <!-- test device -->
+                <rect x="108" y="58" width="34" height="42" fill="white" opacity="0.15" rx="4"/>
+                <rect x="112" y="62" width="26" height="34" fill="white" opacity="0.1" rx="2"/>
+                <text x="125" y="83" fill="white" font-size="8" text-anchor="middle" font-family="sans-serif">TEST</text>
+                <!-- label -->
+                <text x="30" y="150" fill="#C8A96B" font-size="8" font-family="sans-serif">Rn gas</text>
+              </svg>
+            </div>
+            <div class="card-body">
+              <h3>Radon Testing</h3>
+              <p>Professional charcoal packet radon testing to help detect unsafe radon gas levels inside the home.</p>
+              <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Why Us</span>
+          <h2>Why Choose Prestige Inspections?</h2>
+          <p>We bring professionalism, knowledge, and a commitment to delivering thorough, honest results every time.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-box">
+            <div class="why-icon">🏛</div>
+            <div>
+              <h4>Licensed NY Home Inspector</h4>
+              <p>Fully licensed by New York State for residential home inspections.</p>
+            </div>
+          </div>
+          <div class="why-box">
+            <div class="why-icon">🎓</div>
+            <div>
+              <h4>ICA Certified Home Inspector</h4>
+              <p>Certified through the ICA School for professional standards and practices.</p>
+            </div>
+          </div>
+          <div class="why-box">
+            <div class="why-icon">⚡</div>
+            <div>
+              <h4>24-Hour Report Turnaround</h4>
+              <p>Detailed digital reports delivered within 24 hours after the inspection.</p>
+            </div>
+          </div>
+          <div class="why-box">
+            <div class="why-icon">📋</div>
+            <div>
+              <h4>Detailed Digital Reports</h4>
+              <p>Comprehensive photo reports with clear explanations of every finding.</p>
+            </div>
+          </div>
+          <div class="why-box">
+            <div class="why-icon">🤝</div>
+            <div>
+              <h4>Professional &amp; Reliable Service</h4>
+              <p>Punctual, thorough, and committed to giving you the information you need.</p>
+            </div>
+          </div>
+          <div class="why-box">
+            <div class="why-icon">🔧</div>
+            <div>
+              <h4>Experience in Related Trades &amp; Construction</h4>
+              <p>Hands-on construction background for deeper insights into home systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Get In Touch</span>
+            <h2>Schedule Your Inspection</h2>
+            <p>Reach out today to schedule your inspection or ask questions about our services. We're ready to help provide the information and peace of mind you need.</p>
+            <p class="note">📄 Detailed digital reports are typically delivered within 24 hours following the inspection.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item-icon">📞</div>
+                <div class="contact-item-text">
+                  <strong>Phone</strong>
+                  <a href="tel:9292103781">(929) 210-3781</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">💬</div>
+                <div class="contact-item-text">
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.link/5H3MG7" target="_blank" rel="noopener">Message on WhatsApp</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">✉</div>
+                <div class="contact-item-text">
+                  <strong>Email</strong>
+                  <a href="mailto:Shimon@prestigeinspectionsusa.com">Shimon@prestigeinspectionsusa.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div class="contact-item-text">
+                  <strong>Service Area</strong>
+                  <span>Tri-State Area, Orange &amp; Sullivan Counties</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="inquiryForm" onsubmit="submitForm(event)">
+              <input type="hidden" name="access_key" value="bff4d305-46ef-4786-bce1-4b52661fe16a" />
+              <input type="hidden" name="subject" value="New Inspection Inquiry — Prestige Inspections USA" />
+              <input type="hidden" name="from_name" value="Prestige Inspections Website" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">Name *</label>
+                  <input type="text" id="fname" name="name" placeholder="Your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="fphone">Phone Number *</label>
+                  <input type="tel" id="fphone" name="phone" placeholder="(555) 000-0000" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="femail">Email Address *</label>
+                <input type="email" id="femail" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="faddress">Property Address</label>
+                <input type="text" id="faddress" name="address" placeholder="123 Main St, New York, NY" />
+              </div>
+              <div class="form-group">
+                <label for="fservice">Service Needed</label>
+                <select id="fservice" name="service">
+                  <option value="">Select a service...</option>
+                  <option>Home Inspection</option>
+                  <option>Sewer Scope Inspection</option>
+                  <option>Radon Testing</option>
+                  <option>Multiple Services</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fmessage">Message</label>
+                <textarea id="fmessage" name="message" placeholder="Tell us about your property or any questions you have..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              ✅ Thank you! We'll be in touch within 24 hours.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /home page -->
+
+  <!-- ════════════════════════════════════ SERVICES PAGE ════════════════════════════════════ -->
+  <div id="page-services" class="page">
+
+    <div class="page-hero">
+      <div class="container">
+        <div class="badge">Our Services</div>
+        <h1>Our Inspection Services</h1>
+        <p>Comprehensive inspection services designed to help protect your investment and provide peace of mind.</p>
+      </div>
     </div>
 
-    <div style="margin-top:28px;font-weight:700;color:#d1d9db">PRESTIGE INSPECTIONS USA INC<br>
-      51 FOREST RD UNIT 318-206 MONROE NY 10950<br>
-      <a href="tel:+19292103781" style="color:#d1d9db;text-decoration:none">929-210-3781</a><br>
-      <a href="mailto:shimon@prestigeinspectionsusa.com" style="color:#d1d9db;text-decoration:none">shimon@prestigeinspectionsusa.com</a>
+    <!-- HOME INSPECTIONS -->
+    <section class="service-section">
+      <div class="container">
+        <div class="service-layout">
+          <div class="service-visual"><span>🏠</span></div>
+          <div class="service-content">
+            <span class="service-tag">Service 01</span>
+            <h2>Home Inspections</h2>
+            <p>A home inspection provides a detailed visual evaluation of the property's major systems and components. We inspect the structure, roof, foundation, electrical, plumbing, HVAC, and more to give you a complete picture of the property's condition.</p>
+            <p>Following the inspection, clients receive a detailed digital inspection report within 24 hours including photos and clear written explanations of every item reviewed.</p>
+            <ul class="service-list">
+              <li>Structural components &amp; foundation</li>
+              <li>Roof, attic &amp; insulation</li>
+              <li>Electrical systems &amp; panels</li>
+              <li>Plumbing systems</li>
+              <li>HVAC systems &amp; water heater</li>
+              <li>Windows, doors &amp; exterior</li>
+              <li>Interior rooms &amp; finishes</li>
+              <li>Garage &amp; attached structures</li>
+            </ul>
+            <a href="#" class="btn btn-primary" onclick="scrollToContact();showPage('home');return false;">Schedule a Home Inspection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEWER SCOPE -->
+    <section class="service-section section-alt">
+      <div class="container">
+        <div class="service-layout reverse">
+          <div class="service-visual"><span>🔍</span></div>
+          <div class="service-content">
+            <span class="service-tag">Service 02</span>
+            <h2>Sewer Scope Inspections</h2>
+            <p>A sewer scope inspection uses a waterproof camera system to inspect the underground main sewer line from the home to the municipal connection or septic system. Hidden problems beneath the ground can be identified before they become catastrophic and extremely costly repairs.</p>
+            <p>The camera is introduced through a cleanout access point and records a real-time video of the pipe's interior, revealing any issues present.</p>
+            <ul class="service-list">
+              <li>Root intrusion detection</li>
+              <li>Cracks and pipe separation</li>
+              <li>Blockages and buildup</li>
+              <li>Pipe corrosion and deterioration</li>
+              <li>Bellied or sagging sections</li>
+              <li>Offset joints</li>
+            </ul>
+            <div class="service-warning">
+              ⚠ Sewer line repairs can cost tens of thousands of dollars. A scope inspection is a small investment that can prevent a massive surprise expense.
+            </div>
+            <a href="#" class="btn btn-primary btn-mt" onclick="scrollToContact();showPage('home');return false;">Schedule a Sewer Scope</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RADON TESTING -->
+    <section class="service-section">
+      <div class="container">
+        <div class="service-layout">
+          <div class="service-visual">
+            <svg viewBox="0 0 240 220" width="240" height="220" xmlns="http://www.w3.org/2000/svg" class="radon-svg" aria-label="Radon testing diagram">
+              <rect x="0" y="155" width="240" height="65" fill="#5D4037" opacity="0.55" rx="3"/>
+              <rect x="0" y="145" width="240" height="16" fill="#795548" opacity="0.4"/>
+              <rect x="30" y="55" width="180" height="95" fill="none" stroke="white" stroke-width="2.5" opacity="0.55" rx="4"/>
+              <polyline points="15,58 120,14 225,58" fill="none" stroke="white" stroke-width="2.5" opacity="0.55"/>
+              <path d="M100,150 L120,115 L140,150" fill="none" stroke="#C8A96B" stroke-width="2.5"/>
+              <g opacity="0.85">
+                <line x1="65" y1="175" x2="65" y2="130" stroke="#C8A96B" stroke-width="2"/>
+                <polygon points="65,126 60,136 70,136" fill="#C8A96B"/>
+                <line x1="120" y1="165" x2="120" y2="108" stroke="#C8A96B" stroke-width="2"/>
+                <polygon points="120,104 115,114 125,114" fill="#C8A96B"/>
+                <line x1="175" y1="175" x2="175" y2="130" stroke="#C8A96B" stroke-width="2"/>
+                <polygon points="175,126 170,136 180,136" fill="#C8A96B"/>
+              </g>
+              <rect x="140" y="75" width="48" height="58" fill="white" opacity="0.12" rx="6"/>
+              <rect x="145" y="80" width="38" height="48" fill="white" opacity="0.08" rx="4"/>
+              <text x="164" y="108" fill="white" font-size="11" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="600">TEST</text>
+              <text x="164" y="120" fill="#C8A96B" font-size="9" text-anchor="middle" font-family="sans-serif">DEVICE</text>
+              <text x="65" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
+              <text x="120" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
+              <text x="175" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
+            </svg>
+          </div>
+          <div class="service-content">
+            <span class="service-tag">Service 03</span>
+            <h2>Radon Testing</h2>
+            <p>Radon is an invisible, odorless, radioactive gas that forms naturally from uranium decay in soil and rock. It can seep into homes through foundation cracks, openings around pipes, and construction joints — accumulating to dangerous concentrations without any visible sign.</p>
+            <p>We use professional charcoal packet radon testing to detect radon levels inside the home. The EPA recommends mitigation if indoor radon levels are at or above 4 pCi/L.</p>
+            <ul class="service-list">
+              <li>Charcoal packet testing method</li>
+              <li>Placed in lowest livable area of home</li>
+              <li>Lab-analyzed results</li>
+              <li>EPA action level guidance included</li>
+              <li>Fast turnaround on results</li>
+            </ul>
+            <a href="#" class="btn btn-primary" onclick="scrollToContact();showPage('home');return false;">Schedule Radon Testing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip -->
+    <div class="trust-strip cta-strip">
+      <div class="container cta-container">
+        <p class="cta-text">Ready to schedule your inspection?</p>
+        <a href="#" class="btn btn-cta" onclick="scrollToContact();showPage('home');return false;">Get in Touch Today</a>
+      </div>
     </div>
-  </section>
 
-  <!-- Gallery -->
-  <section class="gallery-wrap">
-    <div class="gallery" aria-label="gallery">
-      <!-- Replace each src with your real gallery images -->
-      <img src="https://images.unsplash.com/photo-1560184897-6c6a0b9e0f7e?q=80&w=800&auto=format&fit=crop" alt="home 1" />
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" alt="home 2" />
-      <img src="https://images.unsplash.com/photo-1572120360610-d971b9b7b9bc?q=80&w=800&auto=format&fit=crop" alt="home 3" />
-      <img src="https://images.unsplash.com/photo-1505691723518-34c53e9e69f7?q=80&w=800&auto=format&fit=crop" alt="home 4" />
-      <img src="https://images.unsplash.com/photo-1598928506316-9b5b9b6d1f2b?q=80&w=800&auto=format&fit=crop" alt="home 5" />
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" alt="home 6" />
-      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop" alt="home 7" />
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="home 8" />
-    </div>
-  </section>
+  </div><!-- /services page -->
 
-  <!-- Contact -->
-  <section class="contact-section" id="contact">
-    <div class="contact-left">
-      <ul class="contact-list">
-        <li><div class="icon">☎</div> <div><strong>CALL US:</strong> <a href="tel:+19292103781">(929) 210-3781</a></div></li>
-        <li><div class="icon">💬</div> <div><strong>WHATSAPP:</strong> <a href="https://wa.link/sh3mg7" target="_blank" rel="noopener noreferrer">wa.link/sh3mg7</a></div></li>
-        <li><div class="icon">✉</div> <div><strong>EMAIL:</strong> <a href="mailto:shimon@prestigeinspectionsusa.com">shimon@prestigeinspectionsusa.com</a></div></li>
-        <li><div class="icon">🔗</div> <div><strong>WEBSITE:</strong> <a href="https://prestigeinspectionsusa.com" target="_blank" rel="noopener noreferrer">prestigeinspectionsusa.com</a></div></li>
-      </ul>
+  <!-- ════════════════════════════════════ ABOUT PAGE ════════════════════════════════════ -->
+  <div id="page-about" class="page">
 
-      <a class="contact-button" href="mailto:shimon@prestigeinspectionsusa.com">CONTACT US NOW</a>
-
-      <div class="license">Licensed & Certified Home Inspector<br>NY Home Inspector License # 16000156378</div>
+    <div class="page-hero">
+      <div class="container">
+        <div class="badge">About Us</div>
+        <h1>Licensed &amp; Certified Inspector</h1>
+        <p>Serving New York homebuyers, sellers, and owners with professionalism and thorough attention to detail.</p>
+      </div>
     </div>
 
-    <div class="contact-right">
-      <div class="reachout">REACH OUT<br>AND BOOK YOUR<br>INSPECTION TODAY!</div>
-    </div>
-  </section>
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-photo" aria-label="Inspector photo placeholder">
+          <span class="about-photo-icon">👷</span>
+        </div>
+        <div class="about-content">
+          <span class="badge">About Prestige Inspections USA</span>
+          <h1>Providing Thorough &amp; Reliable Home Inspections</h1>
+          <p>As a licensed and certified home inspector in New York, I provide thorough and reliable home inspection services with professionalism and attention to detail. My goal is to give every client clear, accurate information about the property they're buying or selling.</p>
+          <p>I am certified through the ICA School and fully licensed by New York State to perform residential home inspections across the Tri-State Area, including Orange and Sullivan Counties.</p>
+          <p>Before inspections, I worked in related hands-on construction and trade fields — which gave me practical, real-world experience that I bring to every inspection. That background allows me to identify issues that go beyond a checklist.</p>
+          <p>I help homeowners, buyers, and sellers make informed decisions about their properties by providing thorough evaluations and detailed reports delivered within 24 hours of the inspection.</p>
 
+          <div class="license-box">
+            <h4>Licenses &amp; Certifications</h4>
+            <div class="license-item">NY Home Inspector License #16000156378</div>
+            <div class="license-item">ICA Certified Home Inspector</div>
+            <div class="license-item">Servicing Tri-State Area, Orange &amp; Sullivan Counties</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-values">
+        <div class="about-value">
+          <div class="icon">🎯</div>
+          <h4>Thorough Every Time</h4>
+          <p>Every inspection is performed with meticulous attention to detail, so nothing gets missed.</p>
+        </div>
+        <div class="about-value">
+          <div class="icon">📄</div>
+          <h4>Clear Reporting</h4>
+          <p>Detailed digital reports with photos delivered within 24 hours — easy to understand and share.</p>
+        </div>
+        <div class="about-value">
+          <div class="icon">🤝</div>
+          <h4>Client-First Approach</h4>
+          <p>Always available to answer questions and explain findings before, during, and after the inspection.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /about page -->
+
+  <!-- ─── FOOTER (SHARED) ─── -->
   <footer>
-    <div class="wrap center">
-      <div class="addr">PRESTIGE INSPECTIONS USA INC • 51 FOREST RD UNIT 318-206 MONROE NY 10950</div>
-      <div style="margin-top:8px">© <span id="yr"></span> Prestige Inspections USA — All rights reserved</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <img class="logo-icon-footer" src="image.png" alt="Prestige Inspections USA" />
+          </div>
+          <p>Professional home inspections, sewer scope inspections, and radon testing throughout New York and the Tri-State Area.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#" onclick="showPage('home');return false;">Home</a>
+          <a href="#" onclick="showPage('services');return false;">Services</a>
+          <a href="#" onclick="showPage('about');return false;">About Us</a>
+          <a href="#" onclick="scrollToContact();showPage('home');return false;">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:9292103781">📞 (929) 210-3781</a>
+          <a href="mailto:Shimon@prestigeinspectionsusa.com">✉ Shimon@prestigeinspectionsusa.com</a>
+          <a href="https://wa.link/5H3MG7" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <p class="footer-address">📍 Tri-State Area, Orange &amp; Sullivan Counties</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © Prestige Inspections USA — All Rights Reserved
+      </div>
     </div>
   </footer>
 
   <script>
-    // set year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      const map = { home: 0, services: 1, about: 2 };
+      const links = document.querySelectorAll('nav a:not(.btn)');
+      if (links[map[name]]) links[map[name]].classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    // Back-to-top smooth behavior for top anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({behavior:'smooth',block:'start'});
+    function scrollToContact() {
+      showPage('home');
+      setTimeout(() => {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    async function submitForm(e) {
+      e.preventDefault();
+      const form = document.getElementById('inquiryForm');
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const result = await res.json();
+        if (result.success) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Submit Inquiry';
+          btn.disabled = false;
+          alert('Something went wrong. Please try calling or emailing directly.');
         }
-      });
-    });
-
-    // Replace placeholder logo if user drops 'logo.png' next to the html
-    (function tryLoadLocalLogo(){
-      const img = document.getElementById('logoPlaceholder');
-      const localPath = 'logo.png';
-      fetch(localPath, {method:'HEAD'}).then(r=>{
-        if(r.ok) img.src = localPath;
-      }).catch(()=>{/* no local file */});
-    })();
+      } catch {
+        btn.textContent = 'Submit Inquiry';
+        btn.disabled = false;
+        alert('Network error. Please try calling or emailing directly.');
+      }
+    }
   </script>
 </body>
 </html>
