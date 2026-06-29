@@ -1318,6 +1318,20 @@
                 padding: 24px 20px;
             }
         }
+        .card-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px 12px 0 0;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .card-photo {
+        height: 180px;
+    }
+}
     </style>
 </head>
 
@@ -1435,7 +1449,7 @@
                     <div class="card">
                         <div class="card-img card-bg-1">
                             <div class="card-img-overlay"></div>
-                            <span class="card-img-emoji">🏠</span>
+                         <img src="Home inspection main .jpeg" alt="Home Inspection" class="card-photo">
                         </div>
                         <div class="card-body">
                             <h3>Home Inspections</h3>
