@@ -1360,7 +1360,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo-area">
-                <img class="logo-icon" src="image.png" alt="Prestige Inspections USA" />
+                <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon" src="image.png" alt="Prestige Inspections USA" /></a>
             </div>
 
             <nav>
@@ -1458,8 +1458,7 @@
                             <h3>Home Inspections</h3>
                             <p>Comprehensive evaluations of major home systems and components to help buyers and
                                 homeowners make informed decisions.</p>
-                            <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn
-                                More</a>
+                            <a href="#home-inspection" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('home-inspection').scrollIntoView(),100);return false;">Learn More</a>
                         </div>
                     </div>
 
@@ -1474,7 +1473,7 @@
                             <p>Camera inspections of the main sewer line to identify hidden underground issues before
                                 they become costly repairs.</p>
                             <p class="card-note">⚠ Sewer repairs can exceed $10,000.</p>
-                            <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn
+                            <a href="#sewer-scope" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('sewer-scope').scrollIntoView(),100);return false;">Learn More</a>
                                 More</a>
                         </div>
                     </div>
@@ -1489,8 +1488,7 @@
                             <h3>Radon Testing</h3>
                             <p>Professional charcoal packet radon testing to help detect unsafe radon gas levels inside
                                 the home.</p>
-                            <a href="#" class="btn btn-primary" onclick="showPage('services');return false;">Learn
-                                More</a>
+                            <a href="#radon-testing" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('radon-testing').scrollIntoView(),100);return false;">Learn More</a>
                         </div>
                     </div>
 
@@ -1866,7 +1864,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo-area">
-                        <img class="logo-icon-footer" src="image.png" alt="Prestige Inspections USA" />
+                        <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon-footer" src="image.png" alt="Prestige Inspections USA" /></a>
                     </div>
                     <p>Professional home inspections, sewer scope inspections, and radon testing throughout New York and
                         the Tri-State Area.</p>
