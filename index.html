@@ -1857,7 +1857,300 @@
         </div>
 
     </div><!-- /about page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Prestige Inspections USA</title>
+<style>
+  :root {
+    --navy: #1B2A41;
+    --slate: #3D5A73;
+    --gold: #C9922A;
+    --cream: #F7F5F0;
+    --ink: #26241F;
+    --line: #DEDACE;
+  }
 
+  * { box-sizing: border-box; }
+
+  .pi-faq {
+    background: var(--cream);
+    padding: 72px 20px 88px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+  }
+
+  .pi-faq-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .pi-faq-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .pi-faq-eyebrow::before,
+  .pi-faq-eyebrow::after {
+    content: "";
+    height: 1px;
+    width: 28px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .pi-faq h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    text-align: center;
+    color: var(--navy);
+    margin: 0 0 12px;
+    line-height: 1.15;
+  }
+
+  .pi-faq-sub {
+    text-align: center;
+    color: var(--slate);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  .pi-faq-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .pi-faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pi-faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 22px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pi-faq-q:hover { color: var(--slate); }
+
+  .pi-faq-mark {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    position: relative;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .pi-faq-mark::before,
+  .pi-faq-mark::after {
+    content: "";
+    position: absolute;
+    background: var(--gold);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pi-faq-mark::before { width: 10px; height: 1.5px; }
+  .pi-faq-mark::after { width: 1.5px; height: 10px; transition: opacity 0.25s ease; }
+
+  .pi-faq-item[open] .pi-faq-mark { background: var(--gold); border-color: var(--gold); }
+  .pi-faq-item[open] .pi-faq-mark::before,
+  .pi-faq-item[open] .pi-faq-mark::after { background: var(--cream); }
+  .pi-faq-item[open] .pi-faq-mark::after { opacity: 0; }
+
+  .pi-faq-a {
+    padding: 0 4px 24px;
+    color: #4A473F;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 660px;
+  }
+
+  .pi-faq-a p { margin: 0 0 12px; }
+  .pi-faq-a p:last-child { margin-bottom: 0; }
+
+  details.pi-faq-item summary { list-style: none; }
+  details.pi-faq-item summary::-webkit-details-marker { display: none; }
+
+  .pi-faq-cta {
+    margin-top: 56px;
+    text-align: center;
+    padding: 36px 24px;
+    background: var(--navy);
+    border-radius: 4px;
+  }
+
+  .pi-faq-cta p {
+    color: #EDE9DE;
+    font-size: 16px;
+    margin: 0 0 18px;
+  }
+
+  .pi-faq-cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pi-faq-cta a {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .pi-faq-cta .pi-primary {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .pi-faq-cta .pi-secondary {
+    background: transparent;
+    color: #EDE9DE;
+    border: 1px solid rgba(237,233,222,0.4);
+  }
+
+  @media (max-width: 600px) {
+    .pi-faq { padding: 56px 16px 64px; }
+    .pi-faq-q { font-size: 16px; }
+  }
+</style>
+<style type="text/css" nonce="">
+.redacted {
+  color: red !important;
+}</style></head>
+<body>
+
+<section class="pi-faq">
+  <div class="pi-faq-inner">
+    <div class="pi-faq-eyebrow">Good to Know</div>
+    <h2>Frequently Asked Questions</h2>
+    <p class="pi-faq-sub">Straight answers about home inspections, sewer scope, and radon testing across the Tri-State Area, Orange &amp; Sullivan Counties.</p>
+
+    <div class="pi-faq-list">
+
+      <details class="pi-faq-item" open>
+        <summary class="pi-faq-q">What does a home inspection cover?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>A home inspection is a visual evaluation of the property's major systems and components — structure and foundation, roof and attic, electrical, plumbing, HVAC, windows, doors, exterior, interior finishes, and garage or attached structures. The goal is to give you a clear, honest picture of the home's condition before you buy, sell, or simply want peace of mind as an owner.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">How long does an inspection take?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>It depends on the size, age, and condition of the home, but most standard home inspections take a few hours on site. Sewer scope and radon testing can be added the same visit, which is convenient if you're coordinating a closing timeline.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">When will I get my report?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>You'll receive a detailed digital report within 24 hours of the inspection. It includes photos and clear written explanations for every item reviewed, so you and your agent can move forward with confidence.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">What is a sewer scope inspection, and do I really need one?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>A sewer scope inspection uses a waterproof camera fed through a cleanout access point to record the interior of the main sewer line, from the house to the municipal connection or septic system. It can reveal root intrusion, cracks, offset joints, corrosion, and blockages hidden underground.</p>
+          <p>It's optional, but worth serious consideration — sewer line repairs can run into the tens of thousands of dollars, and a scope inspection is a small investment compared to that kind of surprise.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">Why should I test for radon?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>Radon is an invisible, odorless gas that forms naturally in soil and rock and can seep into a home through foundation cracks and openings around pipes. Testing is the only way to know if it's present. We use professional charcoal packet testing, placed in the lowest livable area of the home, with lab-analyzed results. The EPA recommends mitigation at or above 4 pCi/L.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">How much does an inspection cost?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>Pricing depends on the size, age, and location of the property, along with which services you'd like combined — home inspection, sewer scope, radon testing, or a package of all three. Reach out with your property details and we'll give you an accurate quote, usually within the same day.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">Should I be there for the inspection?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>You're welcome to attend, and many clients find it helpful. Walking through findings in person, asking questions on the spot, and seeing issues firsthand often makes the written report easier to understand later. If your schedule doesn't allow it, the report itself is thorough enough to stand on its own.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">What if the inspection turns up problems?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>That's actually the point — better to know now than after closing. Every finding is documented clearly in the report with photos and explanations, so you can decide what matters most: negotiate repairs, request credits, or simply go in with realistic expectations about maintenance ahead. Questions about any finding are always welcome, before or after you've had time to review the report.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">What areas do you serve?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>We serve the Tri-State Area, with a focus on Orange and Sullivan Counties in New York. If you're just outside that footprint, reach out — service area can sometimes be flexible depending on scheduling.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">Are you licensed and certified?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>Yes. Prestige Inspections USA is fully licensed by New York State (License #16000156378) and certified through the ICA School. There's also a hands-on background in construction and related trades behind every inspection, which helps catch issues that go beyond a standard checklist.</p>
+        </div>
+      </details>
+
+      <details class="pi-faq-item">
+        <summary class="pi-faq-q">How do I schedule an inspection?<span class="pi-faq-mark"></span></summary>
+        <div class="pi-faq-a">
+          <p>The easiest way is to call or text (929) 210-3781, message on WhatsApp, or send an email with your property address and preferred timing. We'll confirm availability and walk you through next steps.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="pi-faq-cta">
+      <p>Have a question that isn't answered here?</p>
+      <div class="pi-faq-cta-row">
+        <a class="pi-primary" href="tel:9292103781">Call (929) 210-3781</a>
+        <a class="pi-secondary" href="https://wa.link/5H3MG7">Message on WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
     <!-- ─── FOOTER (SHARED) ─── -->
     <footer>
         <div class="container">
