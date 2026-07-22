@@ -2220,7 +2220,9 @@
     btn.classList.toggle('open', isOpen);
     label.textContent = isOpen ? 'Hide questions' : 'See common questions';
             if (isOpen) piRenderQuick();
-}function piRenderQuick() {
+}
+        
+        function piRenderQuick() {
             const quick = document.getElementById('pi-chat-quick');
             quick.innerHTML = '';
             piFaqData.forEach((item, i) => {
