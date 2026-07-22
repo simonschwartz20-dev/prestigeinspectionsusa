@@ -1515,6 +1515,25 @@
 #pi-chat-quick::-webkit-scrollbar-thumb {
     background: var(--gold);
     border-radius: 10px;
+}
+        .pi-chat-typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 14px !important;
+}
+.pi-chat-typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mid-gray);
+    animation: pi-chat-bounce 1.2s infinite ease-in-out;
+}
+.pi-chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.pi-chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes pi-chat-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-4px); opacity: 1; }
 }#pi-chat-footer {
             padding: 12px 16px;
             border-top: 1px solid #E5E1D4;
@@ -2221,10 +2240,20 @@
             userMsg.textContent = item.q;
             body.appendChild(userMsg);
 
-            const botMsg = document.createElement('div');
-            botMsg.className = 'pi-chat-msg bot';
-            botMsg.textContent = item.a;
-            body.appendChild(botMsg);
+            const typing = document.createElement('div');
+typing.className = 'pi-chat-msg bot pi-chat-typing';
+typing.innerHTML = '<span></span><span></span><span></span>';
+body.appendChild(typing);
+body.scrollTop = body.scrollHeight;
+
+setTimeout(() => {
+    typing.remove();
+    const botMsg = document.createElement('div');
+    botMsg.className = 'pi-chat-msg bot';
+    botMsg.textContent = item.a;
+    body.appendChild(botMsg);
+    body.scrollTop = body.scrollHeight;
+}, 2000);
 
             body.scrollTop = body.scrollHeight;
 
