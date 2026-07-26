@@ -1559,10 +1559,7 @@
             #pi-chat-launcher { right: 16px; bottom: 16px; }
         }
     </style>
-<style type="text/css" nonce="">
-.redacted {
-  color: red !important;
-}</style></head>
+</head>
 
 <body>
 
@@ -2213,15 +2210,15 @@
         }
 
         function piToggleQuick() {
-    const quick = document.getElementById('pi-chat-quick');
-    const btn = document.getElementById('pi-chat-quick-toggle');
-    const label = btn.querySelector('span');
-    const isOpen = quick.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    label.textContent = isOpen ? 'Hide questions' : 'See common questions';
+            const quick = document.getElementById('pi-chat-quick');
+            const btn = document.getElementById('pi-chat-quick-toggle');
+            const label = btn.querySelector('span');
+            const isOpen = quick.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            label.textContent = isOpen ? 'Hide questions' : 'See common questions';
             if (isOpen) piRenderQuick();
-}
-        
+        }
+
         function piRenderQuick() {
             const quick = document.getElementById('pi-chat-quick');
             quick.innerHTML = '';
@@ -2244,24 +2241,23 @@
             body.appendChild(userMsg);
 
             const typing = document.createElement('div');
-typing.className = 'pi-chat-msg bot pi-chat-typing';
-typing.innerHTML = '<span></span><span></span><span></span>';
-body.appendChild(typing);
-body.scrollTop = body.scrollHeight;
+            typing.className = 'pi-chat-msg bot pi-chat-typing';
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            body.appendChild(typing);
+            body.scrollTop = body.scrollHeight;
 
-setTimeout(() => {
-    typing.remove();
-    const botMsg = document.createElement('div');
-    botMsg.className = 'pi-chat-msg bot';
-    botMsg.textContent = item.a;
-    body.appendChild(botMsg);
-    body.scrollTop = body.scrollHeight;
-}, 2000);
+            setTimeout(() => {
+                typing.remove();
+                const botMsg = document.createElement('div');
+                botMsg.className = 'pi-chat-msg bot';
+                botMsg.textContent = item.a;
+                body.appendChild(botMsg);
+                body.scrollTop = body.scrollHeight;
+            }, 2000);
 
-            // body.scrollTop = body.scrollHeight;
-
-            <script/>
-    
+            body.scrollTop = body.scrollHeight;
+        }
+    </script>
 </body>
 
 </html>
