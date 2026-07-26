@@ -2138,6 +2138,7 @@
             const links = document.querySelectorAll('nav a:not(.btn)');
             if (links[map[name]]) links[map[name]].classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.url = https://prestigeinspectionsusa.com/#${name}
         }
 
         function scrollToContact() {
@@ -2230,6 +2231,8 @@
                 quick.appendChild(btn);
             });
         }
+
+        
 
         function piAnswer(i) {
             const body = document.getElementById('pi-chat-body');
